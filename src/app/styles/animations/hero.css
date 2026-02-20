@@ -1,0 +1,58 @@
+@keyframes heroInFromLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-24px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes heroInFromRight {
+  from {
+    opacity: 0;
+    transform: translate3d(24px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-anim-left {
+  opacity: 0;
+  animation: heroInFromLeft 700ms ease-out forwards;
+}
+
+.hero-anim-right {
+  opacity: 0;
+  animation: heroInFromRight 700ms ease-out forwards;
+}
+
+.hero-anim-up {
+  opacity: 0;
+  animation: heroFadeUp 700ms ease-out forwards;
+}
+
+.hero-delay-120 { animation-delay: 120ms; }
+.hero-delay-180 { animation-delay: 180ms; }
+.hero-delay-260 { animation-delay: 260ms; }
+.hero-delay-320 { animation-delay: 320ms; }
+.hero-delay-360 { animation-delay: 360ms; }
+.hero-delay-420 { animation-delay: 420ms; }
+.hero-delay-480 { animation-delay: 480ms; }
+.hero-delay-560 { animation-delay: 560ms; }
+.hero-delay-640 { animation-delay: 640ms; }
+.hero-delay-720 { animation-delay: 720ms; }

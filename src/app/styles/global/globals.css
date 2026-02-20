@@ -1,0 +1,95 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #fff8f0;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Unbounded", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  width: fit-content;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  #news ul {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Applicants benefits grid */
+@media (max-width: 520px) {
+  #applicants .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  #applicants .grid > div {
+    grid-column: span 2 !important;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 740px) {
+  #applicants .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  #applicants .grid > div:last-child {
+    grid-column: span 2 !important;
+  }
+}

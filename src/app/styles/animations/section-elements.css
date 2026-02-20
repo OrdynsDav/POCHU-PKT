@@ -1,0 +1,30 @@
+.anim-title {
+  opacity: 0;
+  animation: sectionFadeUp 600ms ease-out forwards;
+}
+
+.anim-stagger {
+  opacity: 0;
+  animation: sectionFadeUp 700ms ease-out forwards;
+}
+
+.anim-delay-1 { animation-delay: 80ms; }
+.anim-delay-2 { animation-delay: 160ms; }
+.anim-delay-3 { animation-delay: 240ms; }
+.anim-delay-4 { animation-delay: 320ms; }
+.anim-delay-5 { animation-delay: 400ms; }
+.anim-delay-6 { animation-delay: 480ms; }
+.anim-delay-7 { animation-delay: 560ms; }
+.anim-delay-8 { animation-delay: 640ms; }
+.anim-delay-9 { animation-delay: 720ms; }
+
+@keyframes sectionFadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
