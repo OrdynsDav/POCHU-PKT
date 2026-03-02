@@ -56,11 +56,6 @@ export default function RootLayout({
     <html lang="ru">
       <head>
         <meta charSet="UTF-8" />
-        <link
-          rel="icon"
-          type="image/x-icon"
-          href="https://public-frontend-cos.metadl.com/mgx/img/favicon_atoms.ico"
-        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
           ПКТ — Псковский Кооперативный Техникум | Колледж в Пскове | СПО

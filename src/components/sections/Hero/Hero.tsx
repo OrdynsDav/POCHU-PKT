@@ -92,9 +92,9 @@ export function Hero() {
             <HeroActions />
 
             {/* Quick stats */}
-            <div className="flex flex-wrap gap-8 justify-between mt-14 pt-8 border-t border-white/10 hero-anim-up hero-delay-420">
+            {/* <ul className="flex flex-wrap gap-4 justify-between mt-14 pt-8 border-t border-white/10 hero-anim-up hero-delay-420">
               {stats.map((stat, index) => (
-                <div
+                <li
                   key={stat.label}
                   className={`text-center ${
                     index % 2 === 0 ? "hero-anim-left" : "hero-anim-right"
@@ -112,9 +112,9 @@ export function Hero() {
                     {stat.value}
                   </p>
                   <p className="text-sm text-white/50 mt-1">{stat.label}</p>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul> */}
           </div>
         </div>
       </Container>

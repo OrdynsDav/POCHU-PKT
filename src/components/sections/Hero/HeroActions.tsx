@@ -20,7 +20,7 @@ export function HeroActions() {
       <Link
         href={"#applicants"}
         onClick={(e) => handleAnchorClick(e, "#applicants")}
-        className="group flex items-center justify-center gap-2 px-8 py-4 bg-linear-to-r from-[#DC2626] to-[#B91C1C] text-white font-bold rounded-xl hover:bg-[#ffffff] active:scale-[0.98] transition-all shadow-xl shadow-red-900/30 text-base hero-anim-left hero-delay-320"
+        className="group flex items-center justify-center gap-2 px-8 py-4 bg-linear-to-r from-[#DC2626] to-[#B91C1C] text-white font-bold rounded-xl hover:bg-[#ffffff] active:scale-[0.98] transition-all shadow-xl shadow-red-900/30 text-base hero-anim-left hero-delay-320 max-[600px]:w-full"
       >
         Подать заявку
         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -28,7 +28,7 @@ export function HeroActions() {
       <Link
         href={"#departments"}
         onClick={(e) => handleAnchorClick(e, "#departments")}
-        className="flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-all text-base hero-anim-right hero-delay-360"
+        className="flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-all text-base hero-anim-right hero-delay-360 max-[600px]:w-full"
       >
         Специальности
       </Link>

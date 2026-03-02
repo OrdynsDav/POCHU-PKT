@@ -45,27 +45,27 @@ export function Applicants() {
             поможем тебе получить востребованную профессию и построить успешное
             будущее.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 max-[600px]:flex-col max-[600px]:max-w-75">
+          <div className="flex justify-center gap-4 max-[600px]:flex-col w-full">
             <a
               href="https://pskovpkt.ru/applicants/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex justify-center items-center gap-2 px-8 py-4 bg-[#FFF8F0] text-[#3D1518] font-bold rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl text-base anim-stagger anim-delay-4"
+              className="group flex justify-center items-center w-full gap-2 px-8 py-4 bg-[#FFF8F0] text-[#3D1518] font-bold rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl text-base anim-stagger anim-delay-4"
             >
               Подать заявку
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="tel:+78112753882"
-              className="inline-flex items-center gap-2 justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-bold rounded-xl hover:bg-white/20 transition-all text-base anim-stagger anim-delay-5"
+              className="flex items-center gap-2 justify-center w-full px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-bold rounded-xl hover:bg-white/20 transition-all text-base anim-stagger anim-delay-5"
             >
               Позвонить нам
             </a>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6 mt-16">
+          <ul className="grid sm:grid-cols-3 gap-6 mt-16">
             {benefits.map((item, index) => (
-              <div
+              <li
                 key={item.label}
                 className={`bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/10 anim-stagger ${
                   index === 0
@@ -75,13 +75,13 @@ export function Applicants() {
                       : "anim-delay-8"
                 }`}
               >
-                <div className="text-xl font-bold text-[#D4A574]">
+                <h3 className="text-xl font-bold text-[#D4A574]">
                   {item.value}
-                </div>
-                <div className="text-sm text-white/60 mt-1">{item.label}</div>
-              </div>
+                </h3>
+                <span className="text-sm text-white/60 mt-1">{item.label}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </Container>
     </Section>
