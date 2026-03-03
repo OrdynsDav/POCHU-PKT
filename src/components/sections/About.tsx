@@ -48,8 +48,7 @@ export function About() {
               О техникуме
             </h2>
             <p className="text-lg text-[#6B4C3B] max-w-2xl mx-auto anim-stagger anim-delay-3">
-              Псковский кооперативный техникум — одно из старейших учебных
-              заведений Псковской области, готовящее специалистов с 1947 года
+              Псковский кооперативный техникум&nbsp;&mdash; одно из&nbsp;старейших учебных заведений Псковской области, готовящее специалистов с&nbsp;1945 года
             </p>
           </div>
 
@@ -66,18 +65,18 @@ export function About() {
                   />
                 </div>
                 <div className="rounded-2xl bg-linear-to-br from-[#7B2D26] to-[#DC2626] p-6 text-white anim-stagger anim-delay-6">
-                  <div className="text-4xl font-extrabold">75+</div>
-                  <div className="text-white/80 text-sm mt-1">
+                  <p className="text-4xl font-extrabold">80+</p>
+                  <p className="text-white/80 text-sm mt-1">
                     лет успешной работы
-                  </div>
+                  </p>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="rounded-2xl bg-linear-to-br from-[#D4A574] to-[#B8860B] p-6 text-white anim-stagger anim-delay-6">
-                  <div className="text-4xl font-extrabold">1200+</div>
-                  <div className="text-white/80 text-sm mt-1">
+                  <p className="text-4xl font-extrabold">1200+</p>
+                  <p className="text-white/80 text-sm mt-1">
                     студентов обучаются
-                  </div>
+                  </p>
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl shadow-black/10 anim-stagger anim-delay-7">
                   <Image
@@ -96,13 +95,11 @@ export function About() {
                 Почему выбирают нас?
               </h3>
               <p className="text-[#6B4C3B] leading-relaxed mb-6 anim-stagger anim-delay-6">
-                Наш техникум сочетает многолетние традиции с современными
-                подходами к образованию. Мы готовим востребованных специалистов
-                для различных отраслей экономики.
+                Наш техникум сочетает многолетние традиции с&nbsp;современными подходами к&nbsp;образованию. Мы&nbsp;готовим востребованных специалистов для различных отраслей экономики.
               </p>
-              <div className="grid gap-4">
+              <ul className="grid gap-4">
                 {features.map((f, index) => (
-                  <div
+                  <li
                     key={f.title}
                     className={`group flex gap-4 p-4 rounded-xl bg-white shadow-sm hover:shadow-lg hover:shadow-red-900/5 border border-[#E8D5C4] hover:border-[#DC2626]/30 transition-all duration-300 anim-stagger ${
                       index === 0
@@ -123,9 +120,9 @@ export function About() {
                       </h4>
                       <p className="text-sm text-[#6B4C3B]">{f.desc}</p>
                     </div>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>

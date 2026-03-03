@@ -80,7 +80,7 @@ button {
   #applicants .grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-  #applicants .grid > div {
+  #applicants .grid > li {
     grid-column: span 2 !important;
   }
 }
@@ -89,7 +89,7 @@ button {
   #applicants .grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-  #applicants .grid > div:last-child {
+  #applicants .grid > li:last-child {
     grid-column: span 2 !important;
   }
 }

@@ -86,7 +86,7 @@ export function Departments() {
               id="departments-heading"
               className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#3D1518] mb-4 anim-title anim-delay-2"
             >
-              Отделения и специальности
+              Отделения и&nbsp;специальности
             </h2>
             <p className="text-lg text-[#6B4C3B] max-w-2xl mx-auto anim-stagger anim-delay-3">
               Выберите направление, которое станет основой вашей успешной

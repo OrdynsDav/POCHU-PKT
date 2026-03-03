@@ -55,8 +55,8 @@ export function Hero() {
           <div className="max-w-3xl">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white/90 text-sm font-medium mb-8 hero-anim-left">
-              <GraduationCap className="w-4 h-4 text-[#D4A574]" />
-              Приём на 2026/2027 учебный год открыт
+              <GraduationCap className="text-[#D4A574] min-h-6 min-w-6" />
+              <span>Приём на 2026/2027 учебный год открыт</span>
             </div>
 
             {/* Logo mark */}

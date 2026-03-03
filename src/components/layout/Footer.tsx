@@ -51,8 +51,7 @@ export function Footer() {
                 </div>
               </div>
               <p className="text-white/50 text-sm leading-relaxed mb-6">
-                Профессиональное образовательное частное учреждение «Псковский
-                кооперативный техникум»
+                Профессиональное образовательное частное учреждение &laquo;Псковский кооперативный техникум&raquo;
               </p>
               {/* Social Links */}
               <div className="flex flex-col gap-3 max-w-45">
@@ -200,10 +199,9 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="max-w-7xl mx-auto py-6 flex flex-col flex-wrap sm:flex-row justify-between gap-4">
             <p className="text-white/40 text-sm">
-              © 2025 ПОЧУ «Псковский кооперативный техникум». Все права
-              защищены.
+              &copy;&nbsp;2026&nbsp;ПОЧУ &laquo;Псковский кооперативный техникум&raquo;. Все права защищены.
             </p>
             <a
               href="https://pskovpkt.ru/about/docs/"

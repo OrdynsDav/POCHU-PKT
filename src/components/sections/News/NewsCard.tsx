@@ -32,7 +32,7 @@ export function NewsCard({ link, image, title, date, excerpt }: NewsCardProps) {
       <div className="flex min-h-0 flex-1 flex-col p-6">
         <div className="flex items-center gap-2 text-sm text-[#6B4C3B] mb-3">
           <Calendar className="w-4 h-4 text-[#D4A574]" />
-          {date}
+          <time>{date}</time>
         </div>
         <h3 className="font-bold text-[#3D1518] mb-2 group-hover:text-[#DC2626] transition-colors line-clamp-2">
           {title}

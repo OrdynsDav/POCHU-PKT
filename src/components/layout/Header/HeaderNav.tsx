@@ -49,10 +49,10 @@ export function HeaderNav() {
         aria-label={open ? "Закрыть меню" : "Открыть меню"}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        className="hidden max-[1100px]:inline-flex items-center h-11 w-11 justify-center rounded-lg border border-[#E8D5C4] bg-white/80 px-2.5 py-2 text-[#3D1518] shadow-sm hover:bg-white transition-colors"
+        className="hidden max-[1100px]:inline-flex items-center h-15 w-15 justify-center rounded-lg border border-[#E8D5C4] bg-white/80 px-2.5 py-2 text-[#3D1518] shadow-sm hover:bg-white transition-colors"
         onClick={() => setOpen((prev) => !prev)}
       >
-        <Menu className="w-5 h-5" aria-hidden="true" />
+        <Menu className="w-7 h-7" aria-hidden="true" />
       </button>
 
       {/* Mobile menu */}
