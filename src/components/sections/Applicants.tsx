@@ -50,7 +50,7 @@ export function Applicants() {
               href="https://pskovpkt.ru/applicants/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex justify-center items-center w-full gap-2 px-8 py-4 bg-[#FFF8F0] text-[#3D1518] font-bold rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl text-base anim-stagger anim-delay-4"
+              className="group flex justify-center items-center w-full gap-2 px-8 py-4 bg-[#FFF8F0] text-[#3D1518] font-bold rounded-xl transition-all shadow-xl text-base"
             >
               Подать заявку
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

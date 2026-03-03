@@ -157,15 +157,15 @@ export function Footer() {
                 Контакты
               </h4>
               <div className="space-y-4" aria-labelledby="contacts-heading">
-                <div className="flex gap-3">
+                <a className="flex gap-3 group" href="https://yandex.ru/maps/25/pskov/house/ulitsa_kalinina_13/ZkEYdQRkTkUBQFttfXRxeXhqYw==/?ll=28.334671%2C57.808518&z=19" target="_blank">
                   <MapPin
-                    className="w-5 h-5 text-[#DC2626] shrink-0 mt-0.5"
+                    className="w-5 h-5 text-[#DC2626] shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="text-white/60 text-sm">
+                  <span className="text-white/60 text-sm group-hover:text-white transition-colors">
                     {contacts.address}
                   </span>
-                </div>
+                </a>
                 <a
                   href={`tel:${contacts.phone.replace(/\s/g, "")}`}
                   className="flex gap-3 group"

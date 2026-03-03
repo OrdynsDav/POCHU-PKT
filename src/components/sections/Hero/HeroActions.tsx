@@ -18,8 +18,7 @@ export function HeroActions() {
   return (
     <div className="flex gap-4 max-[600px]:flex-col">
       <Link
-        href={"#applicants"}
-        onClick={(e) => handleAnchorClick(e, "#applicants")}
+        href="https://pskovpkt.ru/applicants/"
         className="group flex items-center justify-center gap-2 px-8 py-4 bg-linear-to-r from-[#DC2626] to-[#B91C1C] text-white font-bold rounded-xl hover:bg-[#ffffff] active:scale-[0.98] transition-all shadow-xl shadow-red-900/30 text-base hero-anim-left hero-delay-320 max-[600px]:w-full"
       >
         Подать заявку

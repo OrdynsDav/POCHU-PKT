@@ -32,7 +32,7 @@ export const siteConfig = {
 
   logo: {
     shortName: "ПКТ",
-    href: "#hero",
+    href: "/",
   },
 } as const;
 
