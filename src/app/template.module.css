@@ -1,0 +1,54 @@
+.transitionRoot {
+  position: relative;
+  width: 100%;
+  min-height: inherit;
+}
+
+.pageStatic {
+  width: 100%;
+}
+
+.enterFromRight {
+  width: 100%;
+  animation: page-enter-right 320ms ease;
+}
+
+.leaveToLeft {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  pointer-events: none;
+  animation: page-leave-left 320ms ease forwards;
+}
+
+@keyframes page-enter-right {
+  from {
+    opacity: 0.96;
+    transform: translateX(6%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes page-leave-left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0.98;
+    transform: translateX(-6%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .enterFromRight,
+  .leaveToLeft {
+    animation: none;
+  }
+}

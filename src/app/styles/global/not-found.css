@@ -1,0 +1,251 @@
+:root {
+    --nf-header-height: 120px;
+    --nf-bg: #fff8f0;
+    --nf-text: #3d1518;
+    --nf-muted: #6b4c3b;
+    --nf-white: #fff;
+    --nf-grad-start: #7b2d26;
+    --nf-grad-mid: #9a3a32;
+    --nf-grad-end: #dc2626;
+    --nf-grad-hover-start: #6a2722;
+    --nf-focus: #7b2d26;
+    --nf-shadow-soft: rgb(61 21 24 / 0.1);
+    --nf-shadow-strong: rgb(61 21 24 / 0.18);
+
+    --nf-wrap-max: 48rem;
+    --nf-lead-max: 32rem;
+    --nf-desc-max: 28rem;
+
+    --nf-page-min-h: calc(100vh - var(--nf-header-height));
+    --nf-page-py: clamp(2rem, 5vw, 4rem);
+    --nf-wrap-px: clamp(1rem, 2.2vw, 1.75rem);
+
+    --nf-heart-size: clamp(6.75rem, 26vw, 14rem);
+    --nf-zero-size: clamp(3rem, 7.5vw, 8rem);
+    --nf-digit-size: clamp(4.25rem, 18vw, 10rem);
+
+    --nf-lead-size: clamp(1rem, 1.1vw + 0.7rem, 1.25rem);
+    --nf-description-size: clamp(0.9375rem, 0.5vw + 0.75rem, 1rem);
+    --nf-button-size: clamp(0.875rem, 0.3vw + 0.8rem, 0.95rem);
+
+    --nf-space-1: clamp(2rem, 5vw, 3.5rem);
+    --nf-space-2: clamp(2rem, 4.5vw, 3rem);
+    --nf-space-3: clamp(2rem, 4.5vw, 3rem);
+
+    --nf-button-py: clamp(0.8rem, 1vw, 0.95rem);
+    --nf-button-px: clamp(1.5rem, 3.5vw, 2rem);
+    --nf-button-radius: 0.75rem;
+    --nf-icon-size: 1rem;
+    --nf-code-gap: clamp(0.08em, 0.35vw, 0.12em);
+}
+
+.nf-heart {
+    position: relative;
+    display: flex;
+    height: var(--nf-heart-size);
+    width: var(--nf-heart-size);
+    flex-shrink: 0;
+    align-items: safe center;
+    justify-content: center;
+    animation: nf-pop-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both,
+        nf-heartbeat 4s ease-in-out 0.8s infinite;
+}
+
+.nf-icon {
+    filter: drop-shadow(0 8px 24px #7b2d2640);
+    width: 100%;
+    height: 100%;
+}
+
+.nf-number {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: safe center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--nf-zero-size);
+    line-height: 1;
+    color: var(--nf-white);
+}
+
+.nf-page {
+    display: flex;
+    min-height: var(--nf-page-min-h);
+    flex-direction: column;
+    justify-content: center;
+    background: var(--nf-bg);
+    color: var(--nf-text);
+    padding: calc(var(--nf-header-height) + var(--nf-page-py)) 0 var(--nf-page-py);
+}
+
+.nf-wrap {
+    margin: 0 auto;
+    max-width: var(--nf-wrap-max);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 var(--nf-wrap-px);
+}
+
+.nf-lead {
+    max-width: var(--nf-lead-max);
+    font-size: var(--nf-lead-size);
+    line-height: 1.5;
+    text-wrap: balance;
+    margin: 0;
+}
+
+.nf-nowrap {
+    white-space: nowrap;
+}
+
+.nf-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.nf-code-row {
+    margin-top: var(--nf-space-1);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: var(--nf-code-gap);
+    user-select: none;
+}
+
+.nf-digit {
+    font-size: var(--nf-digit-size);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--nf-text);
+    animation: nf-pop-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) both,
+        nf-float 3.8s ease-in-out 0.75s infinite;
+}
+
+.nf-code-row .nf-digit:first-child {
+    animation-delay: 0s, 0.75s;
+}
+
+.nf-code-row .nf-digit:last-child {
+    animation-delay: 0.12s, 0.87s;
+}
+
+.nf-description {
+    margin-top: var(--nf-space-2);
+    max-width: var(--nf-desc-max);
+    font-size: var(--nf-description-size);
+    line-height: 1.7;
+    color: var(--nf-muted);
+    text-wrap: pretty;
+}
+
+.nf-button {
+    margin-top: var(--nf-space-3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--nf-button-radius);
+    padding: var(--nf-button-py) var(--nf-button-px);
+    font-size: var(--nf-button-size);
+    font-weight: 600;
+    color: var(--nf-white);
+    background-image: linear-gradient(to right, var(--nf-grad-start), var(--nf-grad-mid));
+    box-shadow: 0 4px 16px var(--nf-shadow-soft);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-image 0.2s ease;
+}
+
+.nf-button:hover {
+    background-image: linear-gradient(to right, var(--nf-grad-hover-start), var(--nf-grad-start));
+    box-shadow: 0 8px 24px var(--nf-shadow-strong);
+}
+
+.nf-button:focus-visible {
+    outline: 2px solid var(--nf-focus);
+    outline-offset: 2px;
+}
+
+.nf-button-icon {
+    width: var(--nf-icon-size);
+    height: var(--nf-icon-size);
+    transition: transform 0.2s ease;
+}
+
+.nf-button:hover .nf-button-icon {
+    transform: translateX(-2px);
+}
+
+@keyframes nf-pop-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes nf-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes nf-heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.05);
+    }
+
+    28% {
+        transform: scale(1);
+    }
+
+    42% {
+        transform: scale(1.08);
+    }
+
+    58% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 420px) {
+    :root {
+        --nf-page-min-h: calc(100vh - var(--nf-header-height));
+        --nf-page-py: 1.5rem;
+        --nf-button-px: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nf-digit,
+    .nf-heart {
+        animation: none;
+    }
+}

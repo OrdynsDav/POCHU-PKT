@@ -116,8 +116,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-
-        {/* Prevent hash scrolling on page reload - always start at top */}
         <script
           dangerouslySetInnerHTML={{
             __html: `

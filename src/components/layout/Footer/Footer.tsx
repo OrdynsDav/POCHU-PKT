@@ -203,14 +203,6 @@ export function Footer() {
             <p className="text-white/40 text-sm">
               &copy;&nbsp;2026&nbsp;ПОЧУ &laquo;Псковский кооперативный техникум&raquo;. Все права защищены.
             </p>
-            <a
-              href="https://pskovpkt.ru/about/docs/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/40 text-sm hover:text-white/60 transition-colors"
-            >
-              Политика конфиденциальности
-            </a>
           </div>
         </div>
       </Container>
