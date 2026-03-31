@@ -8,18 +8,23 @@ type AppTemplateProps = {
   children: React.ReactNode;
 };
 
-/**
- * Принудительно размонтирует предыдущую страницу на каждом роут-переходе.
- * Это оставляет layout (шапка/подвал) постоянным, но сам контент страницы
- * всегда монтируется как новый модуль.
- */
 export default function AppTemplate({ children }: AppTemplateProps) {
   const pathname = usePathname();
+  const shouldAnimate = pathname !== "/";
   const [currentChildren, setCurrentChildren] = useState<React.ReactNode>(children);
   const [leavingChildren, setLeavingChildren] = useState<React.ReactNode>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
+    const isHome = pathname === "/";
+
+    if (isHome) {
+      setLeavingChildren(null);
+      setCurrentChildren(children);
+      setIsTransitioning(false);
+      return;
+    }
+
     setLeavingChildren(currentChildren);
     setCurrentChildren(children);
     setIsTransitioning(true);
@@ -34,14 +39,14 @@ export default function AppTemplate({ children }: AppTemplateProps) {
 
   return (
     <div className={styles.transitionRoot}>
-      {leavingChildren ? (
+      {shouldAnimate && leavingChildren ? (
         <div className={styles.leaveToLeft} aria-hidden="true">
           {leavingChildren}
         </div>
       ) : null}
       <div
         key={pathname}
-        className={isTransitioning ? styles.enterFromRight : styles.pageStatic}
+        className={shouldAnimate && isTransitioning ? styles.enterFromRight : styles.pageStatic}
       >
         {currentChildren}
       </div>

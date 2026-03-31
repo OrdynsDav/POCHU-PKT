@@ -29,7 +29,7 @@ export const mainNavigation: readonly MainNavItem[] = [
       {
         id: "documents",
         label: "Документы",
-        href: "/about/docs/"
+        href: "/about/documents/"
       },
       {
         id: "education",
@@ -37,13 +37,12 @@ export const mainNavigation: readonly MainNavItem[] = [
         href: "/about/education/"
       },
       {
-        id: "standards",
+        id: "standarts",
         label: "Образовательные стандарты и требования",
-        href: "/about/educational-standards",
+        href: "/about/educational-standarts",
       },
       {
-        id:
-          "management",
+        id: "management",
         label: "Руководство",
         href: "/about/management/"
       },
@@ -54,8 +53,7 @@ export const mainNavigation: readonly MainNavItem[] = [
       },
       {
         id: "mto",
-        label:
-          "Материально-техническое обеспечение и оснащённость образовательного процесса. Доступная среда",
+        label: "Материально-техническое обеспечение и оснащённость образовательного процесса. Доступная среда",
         href: "/about/logistical-support/",
       },
       {
@@ -94,7 +92,7 @@ export const mainNavigation: readonly MainNavItem[] = [
     id: "life",
     label: "Жизнь техникума",
     children: [
-      { id: "history", label: "История техникума", href: `/life/history.php` },
+      { id: "history", label: "История техникума", href: `/life/history/` },
       {
         id: "schedule",
         label: "Расписание занятий",
@@ -103,7 +101,7 @@ export const mainNavigation: readonly MainNavItem[] = [
       {
         id: "bells",
         label: "Расписание звонков",
-        href: `/life/call-schedule.php`,
+        href: `/life/call-schedule/`,
       },
       { id: "news", label: "Новости", href: `/life/news/` },
       { id: "announcing", label: "Объявления", href: `/life/announcing/` },
@@ -117,17 +115,17 @@ export const mainNavigation: readonly MainNavItem[] = [
       {
         id: "fulltime",
         label: "Очное отделение",
-        href: `/departments/ochnoe-otdelenie/`,
+        href: `/departments/fulltime/`,
       },
       {
         id: "parttime",
         label: "Заочное отделение",
-        href: `/departments/zaochnoe-otdelenie/`,
+        href: `/departments/parttime/`,
       },
       {
         id: "extra",
         label: "Дополнительное образование",
-        href: `/departments/dopolnitelnoe-obrazovanie/`,
+        href: `/departments/additional/`,
       },
     ],
   },
@@ -139,12 +137,12 @@ export const mainNavigation: readonly MainNavItem[] = [
       {
         id: "commission",
         label: "Приёмная комиссия",
-        href: `/applicants/inspection-board.php`,
+        href: `/applicants/inspection-board/`,
       },
       {
         id: "digits",
         label: "Контрольные цифры приёма",
-        href: `/applicants/receiving-control-digits.php`,
+        href: `/applicants/receiving-control-digits/`,
       },
       {
         id: "applicant-paid",
@@ -190,7 +188,7 @@ export const mainNavigation: readonly MainNavItem[] = [
       {
         id: "selfgov",
         label: "Студенческое самоуправление",
-        href: `/students/student-government.php`,
+        href: `/students/student-government/`,
       },
       {
         id: "mentoring",
@@ -215,7 +213,7 @@ export const mainNavigation: readonly MainNavItem[] = [
     label: "Контакты",
     children: [
       { id: "contacts-main", label: "Контакты учреждения", href: `/contacts/` },
-      { id: "requisites", label: "Реквизиты", href: `/contacts/requisites.php` },
+      { id: "requisites", label: "Реквизиты", href: `/contacts/requisites/` },
     ],
   },
 ] as const;

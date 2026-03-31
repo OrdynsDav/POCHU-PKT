@@ -7,6 +7,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --light-gray: #d2d2d2;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -80,7 +81,8 @@ button {
   #applicants .grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-  #applicants .grid > li {
+
+  #applicants .grid>li {
     grid-column: span 2 !important;
   }
 }
@@ -89,7 +91,8 @@ button {
   #applicants .grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-  #applicants .grid > li:last-child {
+
+  #applicants .grid>li:last-child {
     grid-column: span 2 !important;
   }
 }

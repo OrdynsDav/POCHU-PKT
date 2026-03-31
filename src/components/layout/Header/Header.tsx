@@ -1,9 +1,7 @@
-"use client";
-
-import Link from "next/link";
 import { HeaderNav } from "./HeaderNav/HeaderNav";
 import { siteConfig } from "@/config/site";
 import { Container, Logo } from "@/components/ui";
+import styles from './Header.module.css'
 
 export function Header() {
   const { logo } = siteConfig;
@@ -11,11 +9,11 @@ export function Header() {
   return (
     <header
       role="banner"
-      aria-label="Главная навигация сайта"
-      className="fixed w-full z-999 transition-all duration-300 bg-[#FFF8F0]/80 backdrop-blur-md"
-    >
+      aria-label="Главная навигация сайта"    
+      className={styles.header}
+      >
       <Container>
-        <div className="flex justify-between min-h-30 gap-4 py-7.5 items-center max-[1024px]:py-3">
+        <div className={styles.headerWrapper}>
           <Logo shortName={logo.shortName} href={logo.href} />
           <HeaderNav />
         </div>

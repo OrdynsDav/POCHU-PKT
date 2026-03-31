@@ -145,7 +145,6 @@
 }
 
 .submenuLink:hover {
-  background-color: var(--hover-bg);
   color: var(--hover-text);
 }
 
