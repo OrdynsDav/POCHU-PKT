@@ -1,5 +1,5 @@
 import { AboutTitlePage } from "../_components/AboutTitlePage";
 
 export default function AboutEducationPage() {
-  return <AboutTitlePage title="Образование" />;
+  return <AboutTitlePage title="Образование" pdfAppRoute="/about/education" />;
 }

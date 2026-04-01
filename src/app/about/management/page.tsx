@@ -1,5 +1,5 @@
 import { AboutTitlePage } from "../_components/AboutTitlePage";
 
 export default function AboutManagementPage() {
-  return <AboutTitlePage title="Руководство" />;
+  return <AboutTitlePage title="Руководство" pdfAppRoute="/about/management" />;
 }

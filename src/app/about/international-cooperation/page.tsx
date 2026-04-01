@@ -1,5 +1,10 @@
 import { AboutTitlePage } from "../_components/AboutTitlePage";
 
 export default function AboutInternationalCooperationPage() {
-  return <AboutTitlePage title="Международное сотрудничество" />;
+  return (
+    <AboutTitlePage
+      title="Международное сотрудничество"
+      pdfAppRoute="/about/international-cooperation"
+    />
+  );
 }

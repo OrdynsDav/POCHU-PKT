@@ -1,6 +1,7 @@
 import { Logo, Container } from "@/components/ui";
 import { siteConfig } from "@/config/site";
 import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 const quickLinks = [
   { label: "О техникуме", href: "https://pskovpkt.ru/about/" },
@@ -203,6 +204,15 @@ export function Footer() {
             <p className="text-white/40 text-sm">
               &copy;&nbsp;2026&nbsp;ПОЧУ &laquo;Псковский кооперативный техникум&raquo;. Все права защищены.
             </p>
+            <Link
+              className="text-white/40 text-sm"
+              href={"https://pskovpkt.ru/about/docs/Политика%20в%20отношении%20обработки%20персональных%20данных%20в%20ПОЧУ%20ПКТ.pdf"}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Политика в&nbsp;отношении обработки персональных данных
+            </Link>
           </div>
         </div>
       </Container>

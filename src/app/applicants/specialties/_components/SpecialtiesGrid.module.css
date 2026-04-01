@@ -1,0 +1,209 @@
+.list {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 640px) {
+    .list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .list {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1300px) {
+    .list {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .cardSpan2 {
+        grid-column: span 2;
+    }
+
+    .cardSpan3 {
+        grid-column: span 3;
+    }
+}
+
+/* Обёртка для анимации: transform не конфликтует с transition на .card */
+.cardEnter {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid #e8d5c4;
+    background: #fff;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    color: inherit;
+    text-decoration: none;
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 20px 25px -5px rgba(127, 29, 29, 0.05);
+    transform: translateY(-4px);
+}
+
+.card:focus-within {
+    outline: 2px solid #dc2626;
+    outline-offset: 2px;
+}
+
+.topBar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .topBar {
+    opacity: 1;
+}
+
+.iconWrap {
+    display: flex;
+    width: 3.5rem;
+    height: 3.5rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .iconWrap {
+    transform: scale(1.1);
+}
+
+.icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    color: #fff;
+}
+
+.title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.375;
+    color: #3d1518;
+    transition: color 0.3s ease;
+}
+
+.card:hover .title {
+    color: #dc2626;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: auto;
+    font-size: 0.75rem;
+}
+
+.code {
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.375rem;
+    border: 1px solid #e8d5c4;
+    background: #fff8f0;
+    font-weight: 500;
+    color: #6b4c3b;
+}
+
+.duration {
+    color: #6b4c3b;
+}
+
+/* Градиенты: иконка */
+.iconWrap_trade {
+    background: linear-gradient(135deg, #9b2c2c 0%, #742a2a 100%);
+}
+
+.iconWrap_bank {
+    background: linear-gradient(135deg, #6b4c3b 0%, #8b4513 100%);
+}
+
+.iconWrap_cook {
+    background: linear-gradient(135deg, #c05621 0%, #9c4221 100%);
+}
+
+.iconWrap_lawEnforcement {
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+}
+
+.iconWrap_software {
+    background: linear-gradient(135deg, #7b2d26 0%, #dc2626 100%);
+}
+
+.iconWrap_insurance {
+    background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+}
+
+.iconWrap_economy {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.iconWrap_jurisprudence {
+    background: linear-gradient(135deg, #7b2d26 0%, #a03030 100%);
+}
+
+/* Полоска при наведении */
+.card:has(.iconWrap_trade) .topBar {
+    background: linear-gradient(90deg, #9b2c2c 0%, #742a2a 100%);
+}
+
+.card:has(.iconWrap_bank) .topBar {
+    background: linear-gradient(90deg, #6b4c3b 0%, #8b4513 100%);
+}
+
+.card:has(.iconWrap_cook) .topBar {
+    background: linear-gradient(90deg, #c05621 0%, #9c4221 100%);
+}
+
+.card:has(.iconWrap_lawEnforcement) .topBar {
+    background: linear-gradient(90deg, #8b4513 0%, #a0522d 100%);
+}
+
+.card:has(.iconWrap_software) .topBar {
+    background: linear-gradient(90deg, #7b2d26 0%, #dc2626 100%);
+}
+
+.card:has(.iconWrap_insurance) .topBar {
+    background: linear-gradient(90deg, #b45309 0%, #92400e 100%);
+}
+
+.card:has(.iconWrap_economy) .topBar {
+    background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.card:has(.iconWrap_jurisprudence) .topBar {
+    background: linear-gradient(90deg, #7b2d26 0%, #a03030 100%);
+}
