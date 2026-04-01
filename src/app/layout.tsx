@@ -1,5 +1,6 @@
 import "@/app/styles/styles.css";
 import { Header, Footer } from "@/components/layout";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -135,6 +136,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <SpeedInsights />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-9999 focus-visible:hidden focus:px-4 focus:py-2 focus:bg-[#7B2D26] focus:text-white focus:rounded-lg"
