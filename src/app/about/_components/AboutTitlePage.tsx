@@ -1,4 +1,5 @@
 import { PdfAttachmentsSection } from "@/components/ui/pdfDownloadLink/PdfDownloadLink";
+import { Container } from "@/components/ui";
 import styles from "../AboutPage.module.css";
 
 type AboutTitlePageProps = {
@@ -10,10 +11,10 @@ type AboutTitlePageProps = {
 export function AboutTitlePage({ title, pdfAppRoute }: AboutTitlePageProps) {
   return (
     <section className={styles.page}>
-      <div className={styles.container}>
+      <Container>
         <h1 className={styles.title}>{title}</h1>
         {pdfAppRoute ? <PdfAttachmentsSection pdfAppRoute={pdfAppRoute} /> : null}
-      </div>
+      </Container>
     </section>
   );
 }

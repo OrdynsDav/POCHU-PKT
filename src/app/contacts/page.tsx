@@ -1,13 +1,14 @@
 import { PdfAttachmentsSection } from "@/components/ui/pdfDownloadLink/PdfDownloadLink";
+import { Container } from "@/components/ui";
 import styles from "./page.module.css";
 
 export default function ContactsMainPage() {
   return (
     <section className={styles.page}>
-      <div className={styles.container}>
+      <Container>
         <h1 className={styles.title}>Контакты учреждения</h1>
         <PdfAttachmentsSection pdfAppRoute="/contacts" />
-      </div>
+      </Container>
     </section>
   );
 }
