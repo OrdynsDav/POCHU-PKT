@@ -1,4 +1,4 @@
-import { Container, Section } from "@/components/ui";
+import { Container, Section, SectionIntro } from "@/components/ui";
 import { ArrowRight } from "lucide-react";
 import { NewsCard } from "./NewsCard";
 
@@ -41,20 +41,13 @@ export function News() {
     >
       <Container>
         <div className="max-w-7xl">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 bg-red-100 text-[#7B2D26] text-sm font-semibold rounded-full mb-4 anim-title anim-delay-1">
-              Актуальное
-            </span>
-            <h2
-              id="news-heading"
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#3D1518] mb-4 anim-title anim-delay-2"
-            >
-              Последние новости
-            </h2>
-            <p className="text-lg text-[#6B4C3B] max-w-2xl mx-auto anim-stagger anim-delay-3">
-              Узнайте о последних событиях и мероприятиях техникума
-            </p>
-          </div>
+          <SectionIntro
+            variant="burgundy"
+            headingId="news-heading"
+            badge="Актуальное"
+            title="Последние новости"
+            description="Узнайте о последних событиях и мероприятиях техникума"
+          />
 
           <ul
             className="grid gap-8 grid-cols-2 min-[850px]:grid-cols-[repeat(auto-fit,minmax(280px,1fr))]"
@@ -64,13 +57,12 @@ export function News() {
             {news.map(({ title, link, image, date, excerpt }, index) => (
               <li
                 key={title}
-                className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-red-900/5 border border-[#E8D5C4] hover:-translate-y-1 transition-all duration-300 anim-stagger ${
-                  index === 0
+                className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-red-900/5 border border-[#E8D5C4] hover:-translate-y-1 transition-all duration-300 anim-stagger ${index === 0
                     ? "anim-delay-4"
                     : index === 1
                       ? "anim-delay-5"
                       : "anim-delay-6"
-                } max-[850px]:col-span-2${index === news.length - 1 ? " min-[850px]:col-span-2 lg:col-span-1" : ""}`}
+                  } max-[850px]:col-span-2${index === news.length - 1 ? " min-[850px]:col-span-2 lg:col-span-1" : ""}`}
               >
                 <NewsCard
                   title={title}

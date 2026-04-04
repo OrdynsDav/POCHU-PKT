@@ -1,4 +1,4 @@
-import { Container, Section } from "@/components/ui";
+import { Container, Section, SectionIntro } from "@/components/ui";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
@@ -30,31 +30,24 @@ export function Applicants() {
           <div className="absolute inset-0 bg-linear-to-r from-[#3D1518]/95 to-[#7B2D26]/85" />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold rounded-full mb-6 border border-white/20 anim-title anim-delay-1">
-            Приём 2026/2027
-          </span>
-          <h2
-            id="applicants-heading"
-            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 anim-title anim-delay-2"
-          >
-            Начни свой путь к успешной карьере
-          </h2>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed anim-stagger anim-delay-3">
-            Подай заявку на поступление в Псковский кооперативный техникум. Мы
-            поможем тебе получить востребованную профессию и построить успешное
-            будущее.
-          </p>
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <SectionIntro
+            variant="hero"
+            headingId="applicants-heading"
+            badge="Приём 2026/2027"
+            title="Начни свой путь к успешной карьере"
+            description="Подай заявку на поступление в Псковский кооперативный техникум. Мы поможем тебе получить востребованную профессию и построить успешное будущее."
+          />
           <div className="flex justify-center gap-4 max-[600px]:flex-col w-full">
-            <a
-              href="https://pskovpkt.ru/applicants/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex justify-center items-center w-full gap-2 px-8 py-4 bg-[#FFF8F0] text-[#3D1518] font-bold rounded-xl transition-all shadow-xl text-base"
+            <button
+              type="button"
+              popoverTarget="application-dialog"
+              popoverTargetAction="show"
+              className="group flex cursor-pointer justify-center items-center w-full gap-2 px-8 py-4 bg-[#FFF8F0] text-[#3D1518] font-bold rounded-xl transition-all shadow-xl text-base"
             >
               Подать заявку
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </button>
             <a
               href="tel:+78112753882"
               className="flex items-center gap-2 justify-center w-full px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-bold rounded-xl hover:bg-white/20 transition-all text-base anim-stagger anim-delay-5"
@@ -67,13 +60,12 @@ export function Applicants() {
             {benefits.map((item, index) => (
               <li
                 key={item.label}
-                className={`bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/10 anim-stagger ${
-                  index === 0
+                className={`bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/10 anim-stagger ${index === 0
                     ? "anim-delay-6"
                     : index === 1
                       ? "anim-delay-7"
                       : "anim-delay-8"
-                }`}
+                  }`}
               >
                 <h3 className="text-xl font-bold text-[#D4A574]">
                   {item.value}

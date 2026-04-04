@@ -1,0 +1,77 @@
+.root {
+  text-align: center;
+  margin-bottom: var(--si-root-mb);
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  margin-bottom: var(--si-badge-mb);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  border-radius: 9999px;
+  background-color: var(--si-badge-bg);
+  color: var(--si-badge-color);
+  border: 1px solid var(--si-badge-border);
+  backdrop-filter: var(--si-badge-backdrop);
+}
+
+.title {
+  margin: 0 0 var(--si-title-mb);
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: clamp(1.875rem, 2.2vw + 1rem, 3rem);
+  color: var(--si-title-color);
+}
+
+.description {
+  margin: 0 auto var(--si-desc-mb);
+  max-width: 42rem;
+  font-size: 1.125rem;
+  line-height: 1.625;
+  color: var(--si-desc-color);
+}
+
+.burgundy {
+  --si-root-mb: 4rem;
+  --si-badge-mb: 1rem;
+  --si-title-mb: 1rem;
+  --si-desc-mb: 0;
+  --si-badge-bg: #ffe2e2;
+  --si-badge-color: #7b2d26;
+  --si-badge-border: transparent;
+  --si-badge-backdrop: none;
+  --si-title-color: #3d1518;
+  --si-desc-color: #6b4c3b;
+}
+
+.amber {
+  --si-root-mb: 4rem;
+  --si-badge-mb: 1rem;
+  --si-title-mb: 1rem;
+  --si-desc-mb: 0;
+  --si-badge-bg: #fde8d0;
+  --si-badge-color: #8b4513;
+  --si-badge-border: transparent;
+  --si-badge-backdrop: none;
+  --si-title-color: #3d1518;
+  --si-desc-color: #6b4c3b;
+}
+
+.hero {
+  --si-root-mb: 0;
+  --si-badge-mb: 1.5rem;
+  --si-title-mb: 1.5rem;
+  --si-desc-mb: 2.5rem;
+  --si-badge-bg: rgba(255, 255, 255, 0.1);
+  --si-badge-color: #ffffff;
+  --si-badge-border: rgba(255, 255, 255, 0.2);
+  --si-badge-backdrop: blur(8px);
+  --si-title-color: #ffffff;
+  --si-desc-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero .description {
+  font-size: clamp(1.125rem, 1vw + 1rem, 1.25rem);
+}

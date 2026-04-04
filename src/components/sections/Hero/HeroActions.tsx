@@ -3,6 +3,10 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { smoothScrollTo } from "@/lib/smooth-scroll";
+import {
+  ApplicationDialog,
+  APPLICATION_DIALOG_ID,
+} from "@/components/ui";
 
 export function HeroActions() {
   const handleAnchorClick = (
@@ -16,21 +20,26 @@ export function HeroActions() {
   };
 
   return (
-    <div className="flex gap-4 max-[600px]:flex-col">
-      <Link
-        href="https://pskovpkt.ru/applicants/"
-        className="group flex items-center justify-center gap-2 px-8 py-4 bg-linear-to-r from-[#DC2626] to-[#B91C1C] text-white font-bold rounded-xl hover:bg-[#ffffff] active:scale-[0.98] transition-all shadow-xl shadow-red-900/30 text-base hero-anim-left hero-delay-320 max-[600px]:w-full"
-      >
-        Подать заявку
-        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-      </Link>
-      <Link
-        href={"#departments"}
-        onClick={(e) => handleAnchorClick(e, "#departments")}
-        className="flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-all text-base hero-anim-right hero-delay-360 max-[600px]:w-full"
-      >
-        Специальности
-      </Link>
-    </div>
+    <>
+      <div className="flex gap-4 max-[600px]:flex-col">
+        <button
+          type="button"
+          popoverTarget={APPLICATION_DIALOG_ID}
+          popoverTargetAction="show"
+          className="group flex items-center justify-center gap-2 px-8 py-4 bg-linear-to-r from-[#DC2626] to-[#B91C1C] text-white font-bold rounded-xl hover:bg-[#ffffff] active:scale-[0.98] transition-all shadow-xl shadow-red-900/30 text-base hero-anim-left hero-delay-320 max-[600px]:w-full"
+        >
+          Подать заявку
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </button>
+        <Link
+          href={"#departments"}
+          onClick={(e) => handleAnchorClick(e, "#departments")}
+          className="flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-all text-base hero-anim-right hero-delay-360 max-[600px]:w-full"
+        >
+          Специальности
+        </Link>
+      </div>
+      <ApplicationDialog />
+    </>
   );
 }
