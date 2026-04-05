@@ -7,7 +7,7 @@
   display: inline-block;
   padding: 6px 16px;
   margin-bottom: var(--si-badge-mb);
-  font-size: 14px;
+  font-size: var(--text-sm);
   font-weight: 600;
   line-height: 1.4;
   border-radius: 9999px;
@@ -21,14 +21,14 @@
   margin: 0 0 var(--si-title-mb);
   font-weight: 800;
   line-height: 1.2;
-  font-size: clamp(1.875rem, 2.2vw + 1rem, 3rem);
+  font-size: clamp(1.7rem, 2.2vw + 1rem, 3rem);
   color: var(--si-title-color);
 }
 
 .description {
   margin: 0 auto var(--si-desc-mb);
   max-width: 42rem;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.875rem + 0.45vw, 1.125rem);
   line-height: 1.625;
   color: var(--si-desc-color);
 }

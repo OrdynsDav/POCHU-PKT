@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight } from "lucide-react";
 import { smoothScrollTo } from "@/lib/smooth-scroll";
 import {

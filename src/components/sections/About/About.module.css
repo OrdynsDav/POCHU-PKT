@@ -1,5 +1,4 @@
 .about {
-    padding: 96px 0;
     background-color: #fff8f0;
 }
 
@@ -12,7 +11,6 @@
     display: grid;
     gap: 3rem;
     align-items: center;
-    margin-bottom: 5rem;
 }
 
 @media (min-width: 1024px) {
@@ -55,7 +53,7 @@
     left: -0.25rem;
     user-select: none;
     font-family: ui-serif, Georgia, "Times New Roman", serif;
-    font-size: 6rem;
+    font-size: clamp(3rem, 10vw, 6rem);
     line-height: 1;
     color: rgba(255, 255, 255, 0.1);
 }
@@ -63,7 +61,7 @@
 .missionQuoteText {
     position: relative;
     margin: 0;
-    font-size: 0.875rem;
+    font-size: var(--text-sm);
     font-weight: 500;
     line-height: 1.625;
     color: rgba(255, 255, 255, 0.9);
@@ -73,7 +71,7 @@
     position: relative;
     display: block;
     margin-top: 0.5rem;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     color: rgba(255, 255, 255, 0.55);
 }
 
@@ -118,7 +116,7 @@
 
 .statValue {
     margin: 0;
-    font-size: 1.875rem;
+    font-size: var(--text-stat);
     line-height: 1;
     font-weight: 800;
     color: #3d1518;
@@ -126,7 +124,7 @@
 }
 
 .statLabel {
-    font-size: 0.875rem;
+    font-size: var(--text-sm);
     line-height: 1.25;
     font-weight: 600;
     color: #6b4c3b;
@@ -135,7 +133,7 @@
 
 .statSublabel {
     margin: 0;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     line-height: 1.25;
     color: #9b7b6b;
     transition: color 0.3s ease;
@@ -194,7 +192,7 @@
 
 .featureDesc {
     margin: 0;
-    font-size: 0.875rem;
+    font-size: var(--text-sm);
     line-height: 1.5;
     color: #6b4c3b;
 }

@@ -61,14 +61,15 @@
         transform 0.3s ease;
 }
 
-.card:hover {
+.card:hover,
+.card:focus-visible,
+.card:active {
     box-shadow: 0 20px 25px -5px rgba(127, 29, 29, 0.05);
     transform: translateY(-4px);
 }
 
 .card:focus-within {
     outline: 2px solid #dc2626;
-    outline-offset: 2px;
 }
 
 .topBar {
@@ -109,7 +110,7 @@
 
 .title {
     margin: 0;
-    font-size: 1rem;
+    font-size: var(--text-md);
     font-weight: 700;
     line-height: 1.375;
     color: #3d1518;
@@ -126,7 +127,7 @@
     align-items: center;
     gap: 0.75rem;
     margin-top: auto;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
 }
 
 .code {

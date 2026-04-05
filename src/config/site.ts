@@ -14,7 +14,26 @@ export type MainNavItem =
  * Верхнее меню и подпункты в том же виде, что на основном сайте техникума.
  */
 export const mainNavigation: readonly MainNavItem[] = [
-  { id: "home", label: "Главная", href: '/' },
+  {
+    id: "life",
+    label: "Жизнь техникума",
+    children: [
+      { id: "history", label: "История техникума", href: `/life/history/` },
+      {
+        id: "schedule",
+        label: "Расписание занятий",
+        href: `/life/schedule/`,
+      },
+      {
+        id: "bells",
+        label: "Расписание звонков",
+        href: `/life/call-schedule/`,
+      },
+      { id: "news", label: "Новости", href: `/life/news/` },
+      { id: "announcing", label: "Объявления", href: `/life/announcing/` },
+      { id: "reviews", label: "Отзывы", href: `/life/reviews/` },
+    ],
+  },
   {
     id: "about",
     label: "О техникуме",
@@ -85,26 +104,6 @@ export const mainNavigation: readonly MainNavItem[] = [
         label: "Организация питания в образовательной организации",
         href: "/about/logistical-support/meals/",
       },
-    ],
-  },
-  {
-    id: "life",
-    label: "Жизнь техникума",
-    children: [
-      { id: "history", label: "История техникума", href: `/life/history/` },
-      {
-        id: "schedule",
-        label: "Расписание занятий",
-        href: `/life/schedule/`,
-      },
-      {
-        id: "bells",
-        label: "Расписание звонков",
-        href: `/life/call-schedule/`,
-      },
-      { id: "news", label: "Новости", href: `/life/news/` },
-      { id: "announcing", label: "Объявления", href: `/life/announcing/` },
-      { id: "reviews", label: "Отзывы", href: `/life/reviews/` },
     ],
   },
   {

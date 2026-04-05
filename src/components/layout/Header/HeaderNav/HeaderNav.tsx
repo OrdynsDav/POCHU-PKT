@@ -3,28 +3,20 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
-import { siteConfig, mainNavigation } from "@/config/site";
-import type { MainNavChild, MainNavItem } from "@/config/site";
+import { ChevronDown } from "lucide-react";
+import { mainNavigation } from "@/config/site";
+import { MobileHeaderNav } from "@/components/layout/Header/MobileHeaderNav/MobileHeaderNav";
+import { isNavWithChildren } from "./navUtils";
 import styles from "./HeaderNav.module.css";
 
 const externalLinkProps = {
   rel: "noopener noreferrer" as const,
 };
 
-function isNavWithChildren(
-  item: MainNavItem
-): item is Extract<MainNavItem, { children: readonly MainNavChild[] }> {
-  return "children" in item && Array.isArray(item.children);
-}
-
 export function HeaderNav() {
-  const { contacts } = siteConfig;
   const [open, setOpen] = useState(false);
   const [suppressDesktopHover, setSuppressDesktopHover] = useState(false);
   const pathname = usePathname();
-
-  const closeMobile = () => setOpen(false);
 
   useEffect(() => {
     setOpen(false);
@@ -109,107 +101,7 @@ export function HeaderNav() {
           )}
         </ul>
       </nav>
-
-      <button
-        type="button"
-        aria-label={open ? "Закрыть меню" : "Открыть меню"}
-        aria-expanded={open}
-        aria-controls="mobile-menu"
-        className={styles.mobileMenuToggle}
-        onClick={() => setOpen((prev) => !prev)}
-      >
-        <Menu className={styles.mobileMenuIcon} aria-hidden="true" />
-      </button>
-
-      <div className={styles.mobileOnly}>
-        <div
-          role="presentation"
-          aria-hidden="true"
-          className={`${styles.mobileBackdrop} ${open ? styles.mobileBackdropOpen : styles.mobileBackdropClosed}`}
-          onClick={closeMobile}
-        />
-        <div
-          id="mobile-menu"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Мобильное меню навигации"
-          className={`${styles.mobileDrawer} ${open ? styles.mobileDrawerOpen : styles.mobileDrawerClosed}`}
-        >
-          <div className={styles.mobileDrawerHeader}>
-            <button
-              type="button"
-              aria-label="Закрыть меню"
-              className={styles.mobileCloseButton}
-              onClick={closeMobile}
-            >
-              <X className={styles.mobileCloseIcon} aria-hidden="true" />
-            </button>
-          </div>
-          <nav aria-label="Мобильное меню" className={styles.mobileNav}>
-            {mainNavigation.map((item) =>
-              isNavWithChildren(item) ? (
-                <details key={item.id} className={styles.mobileDetails}>
-                  <summary className={styles.mobileSummary}>
-                    <span className={styles.mobileSummaryRow}>
-                      {item.label}
-                      <ChevronDown
-                        className={styles.mobileDetailsChevron}
-                        aria-hidden="true"
-                      />
-                    </span>
-                  </summary>
-                  <ul
-                    className={styles.mobileSubmenuList}
-                    role="list"
-                    aria-label={item.label}
-                  >
-                    {item.children.map((child) => (
-                      <li key={child.id}>
-                        <Link
-                          href={child.href}
-                          {...externalLinkProps}
-                          className={styles.mobileSubmenuLink}
-                          onClick={closeMobile}
-                        >
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              ) : (
-                <Link
-                  key={item.id}
-                  href={item.href}
-                  {...externalLinkProps}
-                  className={styles.mobileTopLink}
-                  onClick={closeMobile}
-                >
-                  {item.label}
-                </Link>
-              )
-            )}
-            <address className={styles.mobileContact}>
-              <Link
-                className={styles.mobileContactLink}
-                href={`tel:${contacts.phone}`}
-                aria-label={`Позвонить: ${contacts.phone}`}
-              >
-                <Phone className={styles.mobileContactIcon} aria-hidden="true" />{" "}
-                {contacts.phone}
-              </Link>
-              <Link
-                className={styles.mobileContactLink}
-                href={`mailto:${contacts.email}`}
-                aria-label={`Написать на почту: ${contacts.email}`}
-              >
-                <Mail className={styles.mobileContactIcon} aria-hidden="true" />{" "}
-                {contacts.email}
-              </Link>
-            </address>
-          </nav>
-        </div>
-      </div>
+      <MobileHeaderNav open={open} onOpenChange={setOpen} />
     </div>
   );
 }
