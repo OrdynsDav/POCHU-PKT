@@ -1,0 +1,16 @@
+.link {
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    min-width: calc(15 * var(--spacing, 0.25rem));
+    min-height: calc(15 * var(--spacing, 0.25rem));
+    border-radius: var(--radius-lg, 0.5rem);
+    background-image: linear-gradient(to bottom right, #7b2d26, #dc2626);
+    color: inherit;
+    text-decoration: none;
+}
+
+.shortName {
+    font-weight: 600;
+    color: #fff;
+}

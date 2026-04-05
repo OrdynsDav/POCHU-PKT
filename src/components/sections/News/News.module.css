@@ -1,0 +1,13 @@
+.news {
+    padding: 96px 0;
+    background-color: #fff8f0;
+}
+
+.inner {
+    max-width: var(--container-7xl, 80rem);
+}
+
+.linkWrap {
+    margin-top: calc(12 * var(--spacing, 0.25rem));
+    text-align: center;
+}

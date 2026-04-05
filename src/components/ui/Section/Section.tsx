@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import styles from "./Section.module.css"
 
 export function Section({
   children,
@@ -53,7 +54,7 @@ export function Section({
     return () => observer.disconnect();
   }, [isMounted]);
 
-  const sectionClassName = ["scroll-mt-[120px]", className]
+  const sectionClassName = [styles.section, className]
     .filter(Boolean)
     .join(" ");
 

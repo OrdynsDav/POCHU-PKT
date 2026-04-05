@@ -1,0 +1,13 @@
+.newsList {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+}
+
+.newsItem {
+    border-bottom: 1px solid var(--border);
+    padding: 25px 0;
+}

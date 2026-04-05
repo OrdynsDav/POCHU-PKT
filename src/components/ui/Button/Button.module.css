@@ -1,0 +1,117 @@
+.base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background-color 0.15s ease,
+        background-image 0.15s ease,
+        border-color 0.15s ease,
+        filter 0.15s ease;
+}
+
+.base>svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+}
+
+.base:hover>svg {
+    transform: translateX(4px);
+}
+
+.primary {
+    background-image: linear-gradient(to right, #dc2626, #b91c1c);
+    color: #fff;
+    box-shadow: 0 20px 25px -5px rgb(127 29 29 / 30%);
+}
+
+.primary:hover {
+    filter: brightness(1.06);
+}
+
+.primary:active {
+    transform: scale(0.98);
+}
+
+.secondary {
+    background-color: rgb(255 255 255 / 10%);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgb(255 255 255 / 20%);
+    color: #fff;
+}
+
+.secondary:hover {
+    background-color: rgb(255 255 255 / 20%);
+}
+
+.secondary:active {
+    transform: scale(0.98);
+}
+
+/* Светлый фон, тёмный текст — блоки на градиенте / тёмном фоне */
+.light {
+    background-color: #fff8f0;
+    color: #3d1518;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
+}
+
+.light:hover {
+    background-color: #f5ebe0;
+}
+
+.light:active {
+    transform: scale(0.98);
+}
+
+/* Обводка на светлом фоне (как «Все специальности») */
+.outline {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border: 2px solid #7b2d26;
+    color: #7b2d26;
+    background-color: transparent;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.15s ease;
+}
+
+.outline:hover {
+    background-color: #7b2d26;
+    color: #fff;
+}
+
+.outline:hover>svg {
+    color: #fff;
+}
+
+.outline:active {
+    transform: scale(0.98);
+}
+
+.fullWidthNarrow {
+    width: 100%;
+}
+
+@media (min-width: 601px) {
+    .fullWidthNarrow {
+        width: auto;
+    }
+}
+
+.fullWidth {
+    width: 100%;
+}

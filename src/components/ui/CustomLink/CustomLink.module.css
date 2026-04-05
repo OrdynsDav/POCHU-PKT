@@ -1,0 +1,5 @@
+/* Визуальные варианты — в ../Button/Button.module.css */
+.link {
+    box-sizing: border-box;
+    text-decoration: none;
+}

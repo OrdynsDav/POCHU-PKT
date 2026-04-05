@@ -1,0 +1,214 @@
+.footer {
+    background-color: var(--color-burgundy-950, #3d1518);
+    color: #fff;
+    scroll-margin-top: 7rem;
+}
+
+.inner {
+    max-width: var(--container-7xl, 80rem);
+    margin-inline: auto;
+    padding-top: calc(16 * var(--spacing, 0.25rem));
+    padding-bottom: calc(16 * var(--spacing, 0.25rem));
+}
+
+.grid {
+    display: grid;
+    gap: calc(12 * var(--spacing, 0.25rem));
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+.brand {
+    min-width: 0;
+}
+
+.brandHead {
+    display: flex;
+    align-items: center;
+    gap: calc(3 * var(--spacing, 0.25rem));
+    margin-bottom: calc(6 * var(--spacing, 0.25rem));
+}
+
+.brandLogo {
+    min-width: calc(15 * var(--spacing, 0.25rem));
+    height: calc(15 * var(--spacing, 0.25rem));
+}
+
+.brandName {
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.brandDesc {
+    color: rgb(255 255 255 / 50%);
+    font-size: 0.875rem;
+    line-height: 1.625;
+    margin-bottom: calc(6 * var(--spacing, 0.25rem));
+}
+
+.socialList {
+    display: flex;
+    flex-direction: column;
+    gap: calc(3 * var(--spacing, 0.25rem));
+    max-width: calc(45 * var(--spacing, 0.25rem));
+}
+
+.socialLink {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: calc(2 * var(--spacing, 0.25rem));
+    width: 100%;
+    padding: calc(2 * var(--spacing, 0.25rem)) calc(4 * var(--spacing, 0.25rem));
+    font-size: 0.875rem;
+    background-color: rgb(255 255 255 / 5%);
+    border: 1px solid rgb(255 255 255 / 5%);
+    border-radius: 0.5rem;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+}
+
+.socialLink:hover {
+    background-color: rgb(255 255 255 / 10%);
+}
+
+.socialIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+.navHeading {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #d4a574;
+    margin-bottom: calc(6 * var(--spacing, 0.25rem));
+}
+
+.navList {
+    display: flex;
+    flex-direction: column;
+    gap: calc(3 * var(--spacing, 0.25rem));
+}
+
+.navLink {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    gap: calc(1.5 * var(--spacing, 0.25rem));
+    font-size: 0.875rem;
+    color: rgb(255 255 255 / 60%);
+    text-decoration: none;
+    transition: color 0.15s ease;
+    width: auto;
+}
+
+.navLink:hover {
+    color: #fff;
+}
+
+.navLinkIcon {
+    width: 0.75rem;
+    height: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.navLink:hover .navLinkIcon {
+    opacity: 1;
+}
+
+/* ─── Контакты ───────────────────────────────────────── */
+
+.address {
+    font-style: normal;
+}
+
+.contactList {
+    display: flex;
+    flex-direction: column;
+    gap: calc(4 * var(--spacing, 0.25rem));
+}
+
+.contactItem {
+    box-sizing: border-box;
+    display: flex;
+    gap: calc(3 * var(--spacing, 0.25rem));
+    color: inherit;
+    text-decoration: none;
+    width: auto;
+}
+
+.contactIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    color: var(--color-red-600, #dc2626);
+}
+
+.contactText {
+    font-size: 0.875rem;
+    color: rgb(255 255 255 / 60%);
+    transition: color 0.15s ease;
+}
+
+.contactItem:hover .contactText {
+    color: #fff;
+}
+
+/* ─── Нижняя полоса ──────────────────────────────────── */
+
+.bottom {
+    border-top: 1px solid rgb(255 255 255 / 10%);
+}
+
+.bottomInner {
+    max-width: var(--container-7xl, 80rem);
+    margin-inline: auto;
+    padding-top: calc(6 * var(--spacing, 0.25rem));
+    padding-bottom: calc(6 * var(--spacing, 0.25rem));
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: calc(4 * var(--spacing, 0.25rem));
+}
+
+@media (min-width: 640px) {
+    .bottomInner {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.copyright {
+    font-size: 0.875rem;
+    color: rgb(255 255 255 / 40%);
+}
+
+.privacyLink {
+    box-sizing: border-box;
+    font-size: 0.875rem;
+    color: rgb(255 255 255 / 40%);
+    text-decoration: none;
+    width: auto;
+}
+
+.privacyLink:hover {
+    color: rgb(255 255 255 / 70%);
+}

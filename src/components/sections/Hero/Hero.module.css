@@ -1,0 +1,155 @@
+.hero {
+    position: relative;
+    padding-top: calc(30 * var(--spacing, 0.25rem));
+    min-height: 100%;
+    max-height: calc(250 * var(--spacing, 0.25rem));
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.mediaLayer {
+    position: absolute;
+    inset: 0;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+}
+
+.overlayHorizontal {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right,
+            rgb(61 21 24 / 95%),
+            rgb(61 21 24 / 80%),
+            rgb(61 21 24 / 40%));
+}
+
+.overlayVertical {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to top,
+            rgb(61 21 24 / 60%),
+            transparent);
+}
+
+.blobTop {
+    position: absolute;
+    top: calc(20 * var(--spacing, 0.25rem));
+    right: calc(20 * var(--spacing, 0.25rem));
+    width: calc(72 * var(--spacing, 0.25rem));
+    height: calc(72 * var(--spacing, 0.25rem));
+    border-radius: 9999px;
+    background-color: rgb(220 38 38 / 10%);
+    filter: blur(64px);
+}
+
+.blobBottom {
+    position: absolute;
+    bottom: calc(20 * var(--spacing, 0.25rem));
+    left: calc(10 * var(--spacing, 0.25rem));
+    width: calc(96 * var(--spacing, 0.25rem));
+    height: calc(96 * var(--spacing, 0.25rem));
+    border-radius: 9999px;
+    background-color: rgb(212 165 116 / 10%);
+    filter: blur(64px);
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    max-width: var(--container-7xl, 80rem);
+    width: 100%;
+    padding-top: calc(20 * var(--spacing, 0.25rem));
+    padding-bottom: calc(20 * var(--spacing, 0.25rem));
+}
+
+.inner {
+    max-width: var(--container-3xl, 48rem);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(2 * var(--spacing, 0.25rem));
+    padding: calc(2 * var(--spacing, 0.25rem)) calc(4 * var(--spacing, 0.25rem));
+    border-radius: 9999px;
+    background-color: rgb(255 255 255 / 10%);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgb(255 255 255 / 10%);
+    color: rgb(255 255 255 / 90%);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: calc(8 * var(--spacing, 0.25rem));
+}
+
+.badgeIcon {
+    color: #d4a574;
+    min-width: calc(6 * var(--spacing, 0.25rem));
+    min-height: calc(6 * var(--spacing, 0.25rem));
+}
+
+.logoWrap {
+    width: fit-content;
+}
+
+.logo {
+    min-width: calc(20 * var(--spacing, 0.25rem));
+    min-height: calc(20 * var(--spacing, 0.25rem));
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.heading {
+    font-size: 2.25rem;
+    line-height: 1.1;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: calc(6 * var(--spacing, 0.25rem));
+}
+
+@media (min-width: 40rem) {
+    .heading {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 48rem) {
+    .heading {
+        font-size: 3.75rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .heading {
+        font-size: 4.5rem;
+    }
+}
+
+.headingLine {
+    display: block;
+}
+
+.headingGradient {
+    display: block;
+    background-image: linear-gradient(to right, #f87171, #d4a574);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.lead {
+    font-size: 1.125rem;
+    line-height: 1.625;
+    color: rgb(255 255 255 / 70%);
+    max-width: var(--container-xl, 36rem);
+    margin-bottom: calc(10 * var(--spacing, 0.25rem));
+}
+
+@media (min-width: 48rem) {
+    .lead {
+        font-size: 1.25rem;
+    }
+}

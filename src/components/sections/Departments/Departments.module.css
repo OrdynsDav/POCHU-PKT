@@ -1,0 +1,14 @@
+.departments {
+    padding-top: calc(24 * var(--spacing, 0.25rem));
+    padding-bottom: calc(24 * var(--spacing, 0.25rem));
+    background-color: #fff;
+}
+
+.inner {
+    max-width: var(--container-7xl, 80rem);
+}
+
+.linkWrap {
+    margin-top: calc(12 * var(--spacing, 0.25rem));
+    text-align: center;
+}

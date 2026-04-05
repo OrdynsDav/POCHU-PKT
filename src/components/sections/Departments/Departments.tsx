@@ -1,15 +1,16 @@
 import { SpecialtiesGrid } from "@/app/applicants/specialties/_components/SpecialtiesGrid";
-import { Container, Section, SectionIntro } from "@/components/ui";
+import { Container, CustomLink, Section, SectionIntro } from "@/components/ui";
+import styles from "./Departments.module.css";
 
 export function Departments() {
   return (
     <Section
       id="departments"
       aria-labelledby="departments-heading"
-      className="py-24 bg-white"
+      className={styles.departments}
     >
       <Container>
-        <div className="max-w-7xl">
+        <div className={styles.inner}>
           <SectionIntro
             variant="amber"
             headingId="departments-heading"
@@ -22,13 +23,10 @@ export function Departments() {
             description="Выберите направление, которое станет основой вашей успешной карьеры"
           />
           <SpecialtiesGrid />
-          <div className="text-center mt-12 anim-stagger anim-delay-9">
-            <a
-              href="/applicants/specialties"
-              className="inline-flex items-center gap-2 px-6 py-3 text-[#7B2D26] font-semibold border-2 border-[#7B2D26] rounded-xl hover:bg-[#7B2D26] hover:text-white transition-all duration-300"
-            >
+          <div className={`${styles.linkWrap} anim-stagger anim-delay-9`}>
+            <CustomLink href="/applicants/specialties" variant="outline">
               Все специальности
-            </a>
+            </CustomLink>
           </div>
         </div>
       </Container>

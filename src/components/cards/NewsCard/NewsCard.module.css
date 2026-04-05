@@ -1,0 +1,113 @@
+.newsCard {
+    color: inherit;
+    text-decoration: none;
+    display: grid;
+    /*
+      --media-size: эталонная ширина превью (минимум колонки сетки).
+      Высота блока = ширина × (aspect-h / aspect-w), см. .newsCardMedia.
+    */
+    --media-aspect-w: 16;
+    --media-aspect-h: 10;
+    --media-size: clamp(14rem, 6vw + 11rem, 26rem);
+    --text-date: clamp(0.8125rem, 0.68rem + 0.45vw, 0.9375rem);
+    --text-title: clamp(1.0625rem, 0.82rem + 0.75vw, 1.375rem);
+    --text-excerpt: clamp(0.875rem, 0.78rem + 0.42vw, 1.0625rem);
+    --text-gap: clamp(0.5rem, 0.32rem + 0.65vw, 0.8125rem);
+    --text-pad-block: clamp(1rem, 0.7rem + 1.15vw, 1.5rem);
+    --text-pad-inline: clamp(1.125rem, 0.8rem + 1.25vw, 1.75rem);
+
+    grid-template-columns: minmax(var(--media-size), 2.5fr) minmax(0, 3fr);
+    gap: 0;
+    overflow: hidden;
+    border-radius: clamp(0.75rem, 1.5vw, 1rem);
+    min-height: 0;
+}
+
+@media (width <=768px) {
+    .newsCard {
+        /* На узком экране «модуль» привязан к ширине вьюпорта */
+        --media-size: clamp(12rem, min(88vw, 32rem), 32rem);
+        --text-title: clamp(1rem, 0.88rem + 0.55vw, 1.25rem);
+        --text-excerpt: clamp(0.8125rem, 0.74rem + 0.35vw, 0.9375rem);
+        grid-template-columns: 1fr;
+    }
+}
+
+.newsCardMedia {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    align-self: start;
+    aspect-ratio: var(--media-aspect-w) / var(--media-aspect-h);
+    min-height: calc(var(--media-size) * var(--media-aspect-h) / var(--media-aspect-w));
+    background: linear-gradient(135deg,
+            #dbeafe 0%,
+            #eef3ff 45%,
+            #f8fbff 100%);
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+@media (width <=768px) {
+    .newsCardMedia {
+        align-self: stretch;
+        /* Верхняя граница высоты = пропорция к --media-size (тот же множитель) */
+        max-height: calc(var(--media-size) * var(--media-aspect-h) / var(--media-aspect-w));
+    }
+}
+
+.newsCardImg {
+    object-fit: cover;
+    object-position: center;
+}
+
+.newsCardOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgb(var(--color-burgundy-900-rgb, 61 21 24) / 30%),
+            transparent);
+    pointer-events: none;
+}
+
+.newsCardBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--text-gap);
+    padding: var(--text-pad-block) var(--text-pad-inline);
+    min-width: 0;
+}
+
+.newsCardDate {
+    margin: 0;
+    font-size: var(--text-date);
+    line-height: 1.45;
+    color: var(--color-brown-600, var(--ink2));
+}
+
+.newsCardTitle {
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.28;
+    color: var(--color-burgundy-950, var(--ink));
+    font-size: var(--text-title);
+    transition: color 0.2s ease;
+}
+
+.newsCard:hover .newsCardTitle {
+    color: var(--color-red-600, #dc2626);
+}
+
+.newsCardExcerpt {
+    margin: 0;
+    color: var(--color-brown-600, var(--ink2));
+    line-height: 1.6;
+    font-size: var(--text-excerpt);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+}

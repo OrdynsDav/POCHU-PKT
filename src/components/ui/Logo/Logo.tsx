@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./Logo.module.css";
 
 interface LogoProps {
   shortName: string;
@@ -9,13 +10,10 @@ interface LogoProps {
 export function Logo({ shortName, href, className }: LogoProps) {
   return (
     <Link
-      className={
-        "min-w-15 min-h-15 rounded-lg grid place-items-center bg-linear-to-br from-[#7B2D26] to-[#DC2626] " +
-        (className || "")
-      }
+      className={[styles.link, className].filter(Boolean).join(" ")}
       href={href}
     >
-      <span className="font-semibold text-white">{shortName}</span>
+      <span className={styles.shortName}>{shortName}</span>
     </Link>
   );
 }

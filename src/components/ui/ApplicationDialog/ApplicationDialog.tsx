@@ -8,6 +8,7 @@ import {
   type FormEvent,
 } from "react";
 import styles from "./ApplicationDialog.module.css";
+import { Button } from "../Button/Button";
 
 /** Стабильный id для `popoverTarget` у кнопок на странице */
 export const APPLICATION_DIALOG_ID = "application-dialog";
@@ -177,7 +178,7 @@ export function ApplicationDialog() {
             popoverTargetAction="hide"
             aria-label="Закрыть окно"
           >
-            <X className="size-5" aria-hidden />
+            <X className={styles.closeIcon} aria-hidden />
           </button>
         </div>
         <form className={styles.form} onSubmit={handleSubmit}>
@@ -235,9 +236,9 @@ export function ApplicationDialog() {
             />
           </div>
           <div className={styles.actions}>
-            <button type="submit" className={styles.submitBtn}>
+            <Button type="submit" className={styles.submitBtn}>
               Отправить
-            </button>
+            </Button>
             <button
               type="button"
               className={styles.cancelBtn}

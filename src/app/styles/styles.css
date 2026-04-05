@@ -3,4 +3,3 @@
 @import './global/globals.css' layer(base);
 @import './animations/hero.css' layer(components);
 @import './animations/section-elements.css' layer(components);
-@import 'tailwindcss';

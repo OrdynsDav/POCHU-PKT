@@ -3,8 +3,9 @@
 import { GraduationCap } from "lucide-react";
 import { Container, Logo } from "@/components/ui";
 import Image from "next/image";
-import { HeroActions } from "./HeroActions";
+import { HeroActions } from "./HeroActions/HeroActions";
 import { siteConfig } from "@/config/site";
+import styles from "./Hero.module.css";
 
 const HERO_IMG = "/images/hero.webp";
 
@@ -15,59 +16,56 @@ export function Hero() {
     <section
       id="hero"
       aria-labelledby="hero-heading"
-      className="relative pt-30 min-h-full max-h-250 flex items-center overflow-hidden"
+      className={styles.hero}
     >
       <Container>
-        <div className="absolute inset-0">
+        <div className={styles.mediaLayer}>
           <Image
             src={HERO_IMG}
             alt="Псковский Кооперативный Техникум"
             priority
-            className="w-full h-full"
+            className={styles.heroImage}
             quality={100}
             width={200}
             height={200}
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#3D1518]/95 via-[#3D1518]/80 to-[#3D1518]/40" />
-          <div className="absolute inset-0 bg-linear-to-t from-[#3D1518]/60 to-transparent" />
+          <div className={styles.overlayHorizontal} />
+          <div className={styles.overlayVertical} />
         </div>
-        <div
-          className="absolute top-20 right-20 w-72 h-72 bg-[#DC2626]/10 rounded-full blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-20 left-10 w-96 h-96 bg-[#D4A574]/10 rounded-full blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="relative z-10 max-w-7xl py-20 w-full">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white/90 text-sm font-medium mb-8 hero-anim-left">
-              <GraduationCap className="text-[#D4A574] min-h-6 min-w-6" />
+        <div className={styles.blobTop} aria-hidden="true" />
+        <div className={styles.blobBottom} aria-hidden="true" />
+        <div className={styles.content}>
+          <div className={styles.inner}>
+            <div
+              className={`${styles.badge} hero-anim-left`}
+            >
+              <GraduationCap className={styles.badgeIcon} />
               <span>Приём на 2026/2027 учебный год открыт</span>
             </div>
-            <div className="hero-anim-right hero-delay-120 w-fit">
+            <div className={`${styles.logoWrap} hero-anim-right hero-delay-120`}>
               <Logo
                 shortName={logo.shortName}
                 href={logo.href}
-                className="min-w-20 min-h-20 text-2xl"
+                className={styles.logo}
               />
             </div>
-            <h1
-              id="hero-heading"
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6"
-            >
-              <span className="block hero-anim-left hero-delay-180">
+            <h1 id="hero-heading" className={styles.heading}>
+              <span className={`${styles.headingLine} hero-anim-left hero-delay-180`}>
                 Псковский
               </span>
-              <span className="block bg-linear-to-r from-[#F87171] to-[#D4A574] bg-clip-text text-transparent hero-anim-right hero-delay-260">
+              <span
+                className={`${styles.headingGradient} hero-anim-right hero-delay-260`}
+              >
                 Кооперативный
               </span>
-              <span className="block hero-anim-left hero-delay-320">
+              <span className={`${styles.headingLine} hero-anim-left hero-delay-320`}>
                 Техникум
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white/70 max-w-xl mb-10 leading-relaxed hero-anim-right hero-delay-260">
+            <p
+              className={`${styles.lead} hero-anim-right hero-delay-260`}
+            >
               Профессиональное образование с&nbsp;1945&nbsp;года. Современные
               специальности, опытные преподаватели и&nbsp;успешные выпускники.
             </p>

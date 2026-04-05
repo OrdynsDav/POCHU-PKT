@@ -1,4 +1,3 @@
-/** Официальный сайт учреждения — структура меню как на https://pskovpkt.ru */
 export const officialEducationSiteUrl = "https://pskovpkt.ru" as const;
 
 export type MainNavChild = {
