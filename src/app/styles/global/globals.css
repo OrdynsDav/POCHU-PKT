@@ -43,7 +43,6 @@
   --color-border-warm: #e8d5c4;
   --color-border-error: #dcb8b8;
 
-  /* Полупрозрачные светлые (оверлеи на тёмном фоне) */
   --color-white-a10: rgb(255 255 255 / 10%);
   --color-white-a20: rgb(255 255 255 / 20%);
   --color-white-a60: rgb(255 255 255 / 60%);
@@ -63,8 +62,10 @@
   --text-lg: clamp(1.125rem, 0.98rem + 0.45vw, 1.25rem);
   --text-xl: clamp(1.25rem, 1.05rem + 0.6vw, 1.5rem);
   --text-stat: clamp(1.375rem, 1.05rem + 1.1vw, 1.875rem);
-  /* Поля ввода: нижняя граница ≥16px, чтобы iOS не зумил при фокусе */
   --text-input: clamp(1rem, 0.96rem + 0.15vw, 1.0625rem);
+
+  /* Основой градиент */
+  --gradient-primary: linear-gradient(to bottom right, #7b2d26, #dc2626);
 }
 
 @media (prefers-color-scheme: dark) {

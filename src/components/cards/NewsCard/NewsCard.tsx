@@ -3,12 +3,18 @@ import Image from "next/image";
 import styles from "./NewsCard.module.css";
 import { NewsCardProps } from "../types";
 
+function isExternalHref(href: string) {
+  return /^https?:\/\//i.test(href);
+}
+
 export function NewsCard({ link, image, title, date, excerpt }: NewsCardProps) {
+  const external = isExternalHref(link);
   return (
     <Link
       href={link}
-      target="_blank"
-      rel="noopener noreferrer"
+      {...(external
+        ? { target: "_blank" as const, rel: "noopener noreferrer" }
+        : {})}
       className={styles.newsCard}
     >
       <div className={styles.newsCardMedia}>

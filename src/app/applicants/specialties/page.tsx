@@ -2,12 +2,13 @@ import { PdfAttachmentsSection } from "@/components/ui/pdfDownloadLink/PdfDownlo
 import styles from "../page.module.css";
 import { Container, Section } from "@/components/ui";
 import { SpecialtiesGrid } from "./_components/SpecialtiesGrid";
+import { PageTitle } from "@/components/ui/PageTitle/PageTitle";
 
 export default function ApplicantsSpecialtiesPage() {
   return (
     <Section className={styles.page} id="specialties">
       <Container>
-        <h1 className={styles.title}>Специальности</h1>
+        <PageTitle title="Специальности" />
         <PdfAttachmentsSection pdfAppRoute="/applicants/specialties" />
         <SpecialtiesGrid />
       </Container>

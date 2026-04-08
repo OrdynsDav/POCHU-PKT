@@ -1,12 +1,13 @@
 import { PdfAttachmentsSection } from "@/components/ui/pdfDownloadLink/PdfDownloadLink";
 import { Container } from "@/components/ui";
 import styles from "./page.module.css";
+import { PageTitle } from "@/components/ui/PageTitle/PageTitle";
 
 export default function StudentsRulesPage() {
   return (
     <section className={styles.page}>
       <Container>
-        <h1 className={styles.title}>Правила внутреннего распорядка</h1>
+        <PageTitle title="Правила внутреннего распорядка" />
         <PdfAttachmentsSection pdfAppRoute="/students" />
       </Container>
     </section>

@@ -1,7 +1,4 @@
-/* Кнопка — в шапке */
 .menuToggle {
-
-
   display: none;
   height: 3.75rem;
   width: 3.75rem;
@@ -251,8 +248,9 @@
     background-color 0.15s ease;
 }
 
-.submenuLink:hover {
-  background-color: var(--hover-bg);
+.submenuLink:hover,
+.submenuLink:active,
+.submenuLink:focus-visible {
   color: var(--hover-text);
 }
 

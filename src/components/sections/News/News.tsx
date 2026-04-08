@@ -10,7 +10,7 @@ const news = [
       "С профориентационным визитом в техникум приезжали учащиеся 8 класса МОУ «Сланцевская СОШ №2» (Ленинградская область).",
     image:
       "https://pskovpkt.ru/upload/resize_cache/iblock/e62/600_400_2/c3nup5760s6lsvgt5delnzn2nrkk2x88.jpg",
-    link: "https://pskovpkt.ru/news/for-students/v-gosti-v-tekhnikum/",
+    link: "/life/news/v-gosti-v-tekhnikum",
   },
   {
     title: "Д2. Техник-криминалист. 2026",
@@ -48,7 +48,7 @@ export function News() {
             title="Последние новости"
             description="Узнайте о последних событиях и мероприятиях техникума"
           />
-          <NewsList news={news}/>
+          <NewsList news={news} />
           <div className={`${styles.linkWrap} anim-stagger anim-delay-7`}>
             <CustomLink href="/life/news/" variant="outline">
               Все новости

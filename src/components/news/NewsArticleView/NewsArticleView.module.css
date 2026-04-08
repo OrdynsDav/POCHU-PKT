@@ -1,0 +1,44 @@
+.galleryPlaceholder {
+    width: 100%;
+    aspect-ratio: 780 / 600;
+    max-height: min(70vh, 28rem);
+    margin-bottom: clamp(1.5rem, 1rem + 1.8vw, 2.25rem);
+    border-radius: clamp(0.75rem, 0.5rem + 1vw, 1.125rem);
+    background: linear-gradient(110deg,
+            #e8d5c4 0%,
+            #f5ebe0 40%,
+            #e8d5c4 80%);
+    background-size: 200% 100%;
+    animation: galleryShimmer 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .galleryPlaceholder {
+        animation: none;
+        background: #f5ebe0;
+    }
+}
+
+@keyframes galleryShimmer {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+.body {
+    font-size: var(--text-md, 1.0625rem);
+    line-height: 1.72;
+    color: var(--color-brown-600, #6b4c3b);
+}
+
+.body p {
+    margin: 0 0 1.15em;
+}
+
+.body p:last-child {
+    margin-bottom: 0;
+}

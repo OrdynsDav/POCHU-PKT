@@ -22,3 +22,9 @@
         padding-inline: clamp(1.25rem, 0.5rem + 3.2vw, 2rem);
     }
 }
+
+@media (width <=340px) {
+    .container {
+        padding-inline: clamp(4px, 2px + 2vw, 8px);
+    }
+}
