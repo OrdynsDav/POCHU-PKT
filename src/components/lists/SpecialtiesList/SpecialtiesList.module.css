@@ -140,36 +140,3 @@
 .duration {
     color: #6b4c3b;
 }
-
-/* Градиенты: иконка */
-.iconWrap_trade {
-    background: linear-gradient(135deg, #9b2c2c 0%, #742a2a 100%);
-}
-
-.iconWrap_bank {
-    background: linear-gradient(135deg, #6b4c3b 0%, #8b4513 100%);
-}
-
-.iconWrap_cook {
-    background: linear-gradient(135deg, #c05621 0%, #9c4221 100%);
-}
-
-.iconWrap_lawEnforcement {
-    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
-}
-
-.iconWrap_software {
-    background: linear-gradient(135deg, #7b2d26 0%, #dc2626 100%);
-}
-
-.iconWrap_insurance {
-    background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
-}
-
-.iconWrap_economy {
-    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-}
-
-.iconWrap_jurisprudence {
-    background: linear-gradient(135deg, #7b2d26 0%, #a03030 100%);
-}
