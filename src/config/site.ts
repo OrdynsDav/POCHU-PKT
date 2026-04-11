@@ -160,7 +160,7 @@ export const mainNavigation: readonly MainNavItem[] = [
       {
         id: "dorm",
         label: "Общежитие",
-        href: `/about/material-support/dormitory.php`,
+        href: `/about/material-support/dormitory`,
       },
     ],
   },
@@ -181,7 +181,7 @@ export const mainNavigation: readonly MainNavItem[] = [
       {
         id: "employment",
         label: "Трудоустройство выпускников",
-        href: `/about/material-support/employment.php`,
+        href: `/about/material-support/employment`,
       },
       {
         id: "selfgov",
@@ -221,7 +221,7 @@ export const siteConfig = {
   shortName: "ПКТ",
   description:
     "Профессиональное образовательное частное учреждение «Псковский кооперативный техникум»",
-  url: "https://pkt-pskov.ru",
+  url: "https://pochu-pkt.vercel.app",
 
   contacts: {
     phone: "+7 (8112) 75-38-82",

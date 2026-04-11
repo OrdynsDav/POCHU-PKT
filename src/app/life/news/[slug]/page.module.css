@@ -43,7 +43,6 @@
 }
 
 .article {
-    max-width: min(100%, 56rem);
     margin-inline: auto;
 }
 

@@ -3,6 +3,15 @@ import styles from "../page.module.css";
 import { Container } from "@/components/ui";
 import { PageTitle } from "@/components/ui/PageTitle/PageTitle";
 import { NewsList } from "@/components/lists/NewsList/NewsList";
+import { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/buildMetaData";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Новости",
+  description: "Новости в ПКТ",
+  path: "/life/news",
+  
+})
 
 const news = [
   {

@@ -29,6 +29,14 @@
     }
 }
 
+.newsCard:hover .newsCardMedia::before,
+.newsCard:focus-visible.newsCardMedia::before,
+.newsCard:focus-visible.newsCardMedia::before,
+.newsCard:focus.newsCardMedia::before,
+.newsCard:active .newsCardMedia::before  {
+    opacity: 1;
+}
+
 .newsCardMedia {
     position: relative;
     width: 100%;
@@ -42,6 +50,26 @@
             #f8fbff 100%);
     overflow: hidden;
     border-radius: 16px;
+}
+
+.newsCardMedia::before {
+    content: 'Читать';
+    display: flex;
+    align-items: safe center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: clamp(1rem, 1.125rem + 0.4vw, 1.5rem);
+    line-height: 1.25;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* background: linear-gradient(to top,
+            rgb(var(--color-burgundy-900-rgb, 61 21 24) / 30%),
+            transparent); */
+    /* background: linear-gradient(to top right, rgb(61 21 24 / 30%), transparent); */
+    background-color: rgba(61, 21, 24, 0.4);
+    z-index: 2;
 }
 
 @media (width <=768px) {

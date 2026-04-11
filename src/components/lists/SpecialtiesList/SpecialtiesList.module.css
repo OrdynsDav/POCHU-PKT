@@ -58,14 +58,14 @@
     text-decoration: none;
     transition:
         box-shadow 0.3s ease,
-        transform 0.3s ease;
+        translate 0.3s ease;
 }
 
 .card:hover,
 .card:focus-visible,
 .card:active {
     box-shadow: 0 20px 25px -5px rgba(127, 29, 29, 0.05);
-    transform: translateY(-4px);
+    translate: 0 -4px;
 }
 
 .card:focus-within {
@@ -80,6 +80,7 @@
     height: 4px;
     opacity: 0;
     transition: opacity 0.3s ease;
+    background: var(--gradient-primary);
 }
 
 .card:hover .topBar {
@@ -96,10 +97,7 @@
     border-radius: 1rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-}
-
-.card:hover .iconWrap {
-    transform: scale(1.1);
+    background: var(--gradient-primary);
 }
 
 .icon {
@@ -174,37 +172,4 @@
 
 .iconWrap_jurisprudence {
     background: linear-gradient(135deg, #7b2d26 0%, #a03030 100%);
-}
-
-/* Полоска при наведении */
-.card:has(.iconWrap_trade) .topBar {
-    background: linear-gradient(90deg, #9b2c2c 0%, #742a2a 100%);
-}
-
-.card:has(.iconWrap_bank) .topBar {
-    background: linear-gradient(90deg, #6b4c3b 0%, #8b4513 100%);
-}
-
-.card:has(.iconWrap_cook) .topBar {
-    background: linear-gradient(90deg, #c05621 0%, #9c4221 100%);
-}
-
-.card:has(.iconWrap_lawEnforcement) .topBar {
-    background: linear-gradient(90deg, #8b4513 0%, #a0522d 100%);
-}
-
-.card:has(.iconWrap_software) .topBar {
-    background: linear-gradient(90deg, #7b2d26 0%, #dc2626 100%);
-}
-
-.card:has(.iconWrap_insurance) .topBar {
-    background: linear-gradient(90deg, #b45309 0%, #92400e 100%);
-}
-
-.card:has(.iconWrap_economy) .topBar {
-    background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
-}
-
-.card:has(.iconWrap_jurisprudence) .topBar {
-    background: linear-gradient(90deg, #7b2d26 0%, #a03030 100%);
 }

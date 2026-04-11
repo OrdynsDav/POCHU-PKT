@@ -1,6 +1,6 @@
-import { SpecialtiesGrid } from "@/app/applicants/specialties/_components/SpecialtiesGrid";
 import { Container, CustomLink, Section, SectionIntro } from "@/components/ui";
 import styles from "./Departments.module.css";
+import { SpecialtiesList } from "@/components/lists/SpecialtiesList/SpecialtiesList";
 
 export function Departments() {
   return (
@@ -22,7 +22,7 @@ export function Departments() {
             }
             description="Выберите направление, которое станет основой вашей успешной карьеры"
           />
-          <SpecialtiesGrid />
+          <SpecialtiesList />
           <div className={`${styles.linkWrap} anim-stagger anim-delay-9`}>
             <CustomLink href="/applicants/specialties" variant="outline">
               Все специальности

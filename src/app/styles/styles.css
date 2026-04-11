@@ -1,5 +1,5 @@
 @import './global/normalize.css' layer(base);
 @import './global/fonts.css' layer(base);
 @import './global/globals.css' layer(base);
-@import './animations/hero.css' layer(components);
-@import './animations/section-elements.css' layer(components);
+@import './animations/hero.css' layer(base);
+@import './animations/section-elements.css' layer(base);

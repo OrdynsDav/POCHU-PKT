@@ -2,6 +2,7 @@
     background-color: var(--color-burgundy-950, #3d1518);
     color: #fff;
     scroll-margin-top: 7rem;
+    margin-top: auto;
 }
 
 .inner {

@@ -24,7 +24,7 @@ const rules: Rule[] = [
   },
   { test: (p) => p.startsWith("/about/teachers"), route: "/about/management" },
   {
-    test: (p) => p === "/about/educational-standards.php",
+    test: (p) => p === "/about/educational-standards",
     route: "/about/educational-standarts",
   },
   { test: (p) => p.startsWith("/about/financial"), route: "/about/financial" },
@@ -37,12 +37,12 @@ const rules: Rule[] = [
     route: "/about/logistical-support",
   },
   {
-    test: (p) => p.startsWith("/about/material-support/employment.php"),
-    route: "/about/material-support/employment.php",
+    test: (p) => p.startsWith("/about/material-support/employment"),
+    route: "/about/material-support/employment",
   },
   {
-    test: (p) => p.startsWith("/about/material-support/dormitory.php"),
-    route: "/about/material-support/dormitory.php",
+    test: (p) => p.startsWith("/about/material-support/dormitory"),
+    route: "/about/material-support/dormitory",
   },
   {
     test: (p) => p.startsWith("/about/material-support"),
@@ -57,9 +57,9 @@ const rules: Rule[] = [
     route: "/about/logistical-support/meals",
   },
   { test: (p) => p === "/about", route: "/about" },
-  { test: (p) => p.startsWith("/life/history.php"), route: "/life/history" },
+  { test: (p) => p.startsWith("/life/history"), route: "/life/history" },
   {
-    test: (p) => p.startsWith("/life/call-schedule.php"),
+    test: (p) => p.startsWith("/life/call-schedule"),
     route: "/life/call-schedule",
   },
   { test: (p) => p.startsWith("/life/schedule"), route: "/life/schedule" },
