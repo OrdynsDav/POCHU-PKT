@@ -79,6 +79,7 @@
 .newsCardImg {
     object-fit: cover;
     object-position: center;
+    user-select: none;
 }
 
 .newsCardOverlay {
@@ -88,6 +89,7 @@
             rgb(var(--color-burgundy-900-rgb, 61 21 24) / 30%),
             transparent);
     pointer-events: none;
+    user-select: none;
 }
 
 .newsCardBody {
