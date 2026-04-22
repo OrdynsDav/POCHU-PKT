@@ -63,13 +63,10 @@
 
 .card:hover,
 .card:focus-visible,
-.card:active {
+.card:active,
+.card:focus-within {
     box-shadow: 0 20px 25px -5px rgba(127, 29, 29, 0.05);
     translate: 0 -4px;
-}
-
-.card:focus-within {
-    outline: 2px solid #dc2626;
 }
 
 .topBar {

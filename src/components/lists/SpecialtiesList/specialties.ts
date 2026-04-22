@@ -50,8 +50,8 @@ export const SPECIALTIES: readonly SpecialtyItem[] = [
   },
   {
     id: "software",
-    title: "Информационные системы и программирование",
-    code: "09.02.07",
+    title: "Разработка и управление программным обеспечением",
+    code: "09.02.11",
     duration: "3 г. 10 мес.",
     icon: Monitor,
   },

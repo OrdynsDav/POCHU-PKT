@@ -13,18 +13,18 @@
     "@splidejs/splide": "^4.1.4",
     "@vercel/speed-insights": "^2.0.0",
     "lucide-react": "^0.574.0",
-    "next": "16.1.6",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "next": "^16.2.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/node": "^20.19.39",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "^9",
+    "eslint": "^9.39.4",
     "eslint-config-next": "16.1.6",
-    "sass": "^1.98.0",
-    "typescript": "^5"
+    "sass": "^1.99.0",
+    "typescript": "^5.9.3"
   }
 }

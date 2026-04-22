@@ -9,9 +9,9 @@ export function Header() {
   return (
     <header
       role="banner"
-      aria-label="Главная навигация сайта"    
+      aria-label="Главная навигация сайта"
       className={styles.header}
-      >
+    >
       <Container>
         <div className={styles.headerWrapper}>
           <Logo shortName={logo.shortName} href={logo.href} />

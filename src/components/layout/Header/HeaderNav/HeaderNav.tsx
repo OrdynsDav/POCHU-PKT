@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { mainNavigation } from "@/config/site";
 import { MobileHeaderNav } from "@/components/layout/Header/MobileHeaderNav/MobileHeaderNav";
@@ -16,20 +15,28 @@ const externalLinkProps = {
 export function HeaderNav() {
   const [open, setOpen] = useState(false);
   const [suppressDesktopHover, setSuppressDesktopHover] = useState(false);
-  const pathname = usePathname();
+  const suppressTimerRef = useRef<number | null>(null);
 
-  useEffect(() => {
-    setOpen(false);
+  const suppressHoverTemporarily = useCallback((ms: number = 220) => {
     setSuppressDesktopHover(true);
 
-    const timer = window.setTimeout(() => {
-      setSuppressDesktopHover(false);
-    }, 220);
+    if (suppressTimerRef.current !== null) {
+      window.clearTimeout(suppressTimerRef.current);
+    }
 
+    suppressTimerRef.current = window.setTimeout(() => {
+      setSuppressDesktopHover(false);
+      suppressTimerRef.current = null;
+    }, ms);
+  }, []);
+
+  useEffect(() => {
     return () => {
-      window.clearTimeout(timer);
+      if (suppressTimerRef.current !== null) {
+        window.clearTimeout(suppressTimerRef.current);
+      }
     };
-  }, [pathname]);
+  }, []);
 
   return (
     <div className={styles.root}>
@@ -77,7 +84,7 @@ export function HeaderNav() {
                         href={child.href}
                         {...externalLinkProps}
                         className={styles.submenuLink}
-                        onClick={() => setSuppressDesktopHover(true)}
+                        onClick={() => suppressHoverTemporarily(220)}
                       >
                         {child.label}
                       </Link>
@@ -92,7 +99,7 @@ export function HeaderNav() {
                   href={item.href}
                   {...externalLinkProps}
                   className={styles.topLevelLink}
-                  onClick={() => setSuppressDesktopHover(true)}
+                  onClick={() => suppressHoverTemporarily(220)}
                 >
                   {item.label}
                 </Link>

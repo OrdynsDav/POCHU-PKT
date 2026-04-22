@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Container } from "@/components/ui";
 import "./styles/global/not-found.css";
 
-/** Сердце вместо «0» — как на референсе, в цветах техникума */
 function HeartZero({ gradientId }: { gradientId: string }) {
   return (
     <div
@@ -50,7 +49,7 @@ export default function NotFound() {
           </p>
 
           <h1 id="not-found-title" className="nf-sr-only">
-            Ошибка 404 — страница не найдена
+            Ошибка 404&nbsp;&mdash; страница не&nbsp;найдена
           </h1>
 
           <div className="nf-code-row" aria-hidden>
@@ -60,13 +59,13 @@ export default function NotFound() {
           </div>
 
           <p className="nf-description">
-            Проверьте адрес в строке браузера или вернитесь на главную — там есть
-            всё необходимое.
+          Проверьте адрес в&nbsp;строке браузера или вернитесь на&nbsp;главную&nbsp;&mdash; там есть
+          всё необходимое.
           </p>
 
           <Link href="/" className="nf-button">
             <ArrowLeft className="nf-button-icon" aria-hidden />
-            На главную
+            На&nbsp;главную
           </Link>
         </div>
       </Container>

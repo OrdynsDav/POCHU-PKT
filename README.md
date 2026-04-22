@@ -20,6 +20,29 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Windows: "Slow filesystem detected" (ускорение dev)
+
+Если Next.js пишет `Slow filesystem detected` (часто из‑за антивируса/медленного диска), есть 2 практичных решения.
+
+### 1) Исключение для Windows Defender (рекомендуется)
+
+Добавьте папку проекта в исключения Defender (PowerShell от имени администратора):
+
+```powershell
+Add-MpPreference -ExclusionPath "D:\POCHU-PKT"
+```
+
+### 2) Перенос `.next` в быстрый локальный кэш (junction)
+
+Это переносит `.next` в `%LOCALAPPDATA%` и оставляет в проекте ссылку (junction), чтобы сборка не упиралась в медленный диск.
+
+1) Остановите `pnpm dev`
+2) Выполните:
+
+```powershell
+.\scripts\windows\setup-fast-next-cache.ps1
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

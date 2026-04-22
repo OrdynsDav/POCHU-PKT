@@ -5,11 +5,11 @@ import { PageTitle } from "@/components/ui/PageTitle/PageTitle";
 
 export default function ContactsRequisitesPage() {
   return (
-    <section className={styles.page}>
-      <Container>
-        <PageTitle title="Реквизиты" />
-        <PdfAttachmentsSection pdfAppRoute="/contacts/requisites" />
-      </Container>
-    </section>
+      <section className={styles.page}>
+        <Container>
+          <PageTitle title="Реквизиты" />
+          <PdfAttachmentsSection pdfAppRoute="/contacts/requisites" />
+        </Container>
+      </section>
   );
 }
