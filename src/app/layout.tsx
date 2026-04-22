@@ -144,7 +144,7 @@ export default function RootLayout({
           Перейти к основному содержимому
         </a>
         <Header />
-        <main id="main-content" role="main">
+        <main id="main-content" role="main" className="page-main">
           {children}
         </main>
         <Footer />

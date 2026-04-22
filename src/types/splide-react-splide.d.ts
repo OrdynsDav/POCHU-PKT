@@ -6,6 +6,8 @@ declare module "@splidejs/react-splide" {
   export interface SplideProps extends Omit<ComponentProps<"div">, "children"> {
     options?: Record<string, unknown>;
     children?: ReactNode;
+    onMove?: (splide: unknown, newIndex: number, prevIndex: number) => void;
+    onMoved?: (splide: unknown, newIndex: number, prevIndex: number) => void;
   }
 
   export const Splide: FC<SplideProps>;

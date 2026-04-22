@@ -42,6 +42,18 @@
     overflow: hidden;
 }
 
+.slideButton {
+    display: block;
+    width: 100%;
+    text-align: inherit;
+}
+
+.slideButton:focus-visible {
+    outline: 2px solid var(--color-red-600, #dc2626);
+    outline-offset: 4px;
+    border-radius: clamp(0.75rem, 0.5rem + 1vw, 1.125rem);
+}
+
 @media (width <=768px) {
     .slide {
         aspect-ratio: 12 / 9;
@@ -50,6 +62,56 @@
 
 .image {
     object-fit: cover;
+    object-position: center;
+}
+
+.lightboxOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: grid;
+    place-items: center;
+    padding: clamp(0.75rem, 0.5rem + 1.5vw, 1.5rem);
+    background: rgb(0 0 0 / 72%);
+    backdrop-filter: blur(6px);
+}
+
+.lightbox {
+    position: relative;
+    width: calc(100% - 10vw);
+    height: 90vh;
+}
+
+.lightboxClose {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 2;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    box-shadow: 0 2px 12px rgb(0 0 0 / 25%);
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.lightboxSplide {
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 24px 80px rgb(0 0 0 / 45%);
+}
+
+.lightboxSlide {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 90vh;
+    background: #171717;
+}
+
+.lightboxImage {
+    object-fit: contain;
     object-position: center;
 }
 
