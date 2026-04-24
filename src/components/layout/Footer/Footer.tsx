@@ -4,22 +4,28 @@ import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 
-const quickLinks = [
-  { label: "О техникуме", href: "https://pskovpkt.ru/about/" },
-  { label: "Отделения", href: "https://pskovpkt.ru/departments/" },
-  { label: "Абитуриентам", href: "https://pskovpkt.ru/applicants/" },
-  { label: "Студентам", href: "https://pskovpkt.ru/students/" },
-  { label: "Преподавателям", href: "https://pskovpkt.ru/teachers/" },
-  { label: "Расписание", href: "https://pskovpkt.ru/schedule/" },
+interface QuickLink {
+  label: string;
+  href: string;
+  target?: "blank" | "internal";
+}
+
+const quickLinks: QuickLink[] = [
+  { label: "О техникуме", href: "/about/" },
+  { label: "Отделения", href: "/departments/" },
+  { label: "Абитуриентам", href: "/applicants/" },
+  { label: "Студентам", href: "/students/" },
+  { label: "Преподавателям", href: "/teachers/" },
+  { label: "Расписание", href: "/schedule/" },
 ];
 
-const resources = [
-  { label: "Новости", href: "https://pskovpkt.ru/life/news/" },
-  { label: "Фотогалерея", href: "https://pskovpkt.ru/life/gallery/" },
-  { label: "Видеогалерея", href: "https://pskovpkt.ru/life/videogallery/" },
-  { label: "Мероприятия", href: "https://pskovpkt.ru/life/events/" },
-  { label: "Moodle", href: "http://89.23.6.107/" },
-  { label: "Сферум", href: "https://sferum.ru/" },
+const resources: QuickLink[] = [
+  { label: "Новости", href: "/life/news/" },
+  { label: "Фотогалерея", href: "/life/gallery/" },
+  { label: "Видеогалерея", href: "/life/videogallery/" },
+  { label: "Мероприятия", href: "/life/events/" },
+  { label: "Moodle", href: "http://89.23.6.107/", target: "blank" },
+  { label: "Сферум", href: "https://sferum.ru/", target: "blank" },
 ];
 
 export function Footer() {
@@ -91,7 +97,6 @@ export function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      target="_blank"
                       rel="noopener noreferrer"
                       className={styles.navLink}
                     >
@@ -113,7 +118,7 @@ export function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      target="_blank"
+                      target={link.target === "blank" ? "_blank" : undefined}
                       rel="noopener noreferrer"
                       className={styles.navLink}
                     >

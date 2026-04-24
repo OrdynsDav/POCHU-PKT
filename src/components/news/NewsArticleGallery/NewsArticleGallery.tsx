@@ -6,7 +6,7 @@ import "@splidejs/react-splide/css";
 import type { NewsArticleImage } from "@/data/news/articles";
 import { useEffect, useMemo, useState, ViewTransition } from "react";
 import styles from "./NewsArticleGallery.module.css";
-import { ClosedCaption, ClosedCaptionIcon, X } from "lucide-react";
+import { X } from "lucide-react";
 
 type NewsArticleGalleryProps = {
   images: NewsArticleImage[];
@@ -38,8 +38,8 @@ export function NewsArticleGallery({ images, title }: NewsArticleGalleryProps) {
   useEffect(() => {
     if (!isOpen) return;
 
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const prevOverflow = document.documentElement.style.overflow;
+    document.documentElement.style.overflow = "hidden";
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsOpen(false);
@@ -48,7 +48,7 @@ export function NewsArticleGallery({ images, title }: NewsArticleGalleryProps) {
     window.addEventListener("keydown", onKeyDown);
     return () => {
       window.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = prevOverflow;
+      document.documentElement.style.overflow = prevOverflow;
     };
   }, [isOpen]);
 
