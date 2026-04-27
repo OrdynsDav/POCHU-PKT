@@ -3,10 +3,49 @@
 }
 
 .inner {
-    max-width: var(--container-7xl, 80rem);
+    width: 100%;
 }
 
 .linkWrap {
     margin-top: calc(12 * var(--spacing, 0.25rem));
     text-align: center;
+}
+
+.skeletonList {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.skeletonCard {
+    display: grid;
+    grid-template-columns: minmax(14rem, 2.5fr) minmax(0, 3fr);
+    gap: 0;
+    overflow: hidden;
+    border-radius: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+@media (width <=48em) {
+    .skeletonCard {
+        grid-template-columns: 1fr;
+    }
+}
+
+.skeletonMedia {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 1rem;
+}
+
+.skeletonBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: clamp(1rem, 0.7rem + 1.15vw, 1.5rem) clamp(1.125rem, 0.8rem + 1.25vw, 1.75rem);
+}
+
+@media (width <=48em) {
+    .skeletonBody {
+        padding-inline: 0;
+    }
 }

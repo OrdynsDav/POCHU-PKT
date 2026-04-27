@@ -93,7 +93,7 @@ export function NewsArticleGallery({ images, title }: NewsArticleGalleryProps) {
                       src={img.src}
                       alt={img.alt}
                       fill
-                      sizes="(max-width: 768px) 100vw, min(56rem, 90vw)"
+                      sizes="(max-width: 48em) 100vw, min(56rem, 90vw)"
                       className={styles.image}
                       priority={i === 0}
                       quality={95}
@@ -104,7 +104,7 @@ export function NewsArticleGallery({ images, title }: NewsArticleGalleryProps) {
                         src={img.src}
                         alt={img.alt}
                         fill
-                        sizes="(max-width: 768px) 100vw, min(56rem, 90vw)"
+                        sizes="(max-width: 48em) 100vw, min(56rem, 90vw)"
                         className={styles.image}
                         priority={i === 0}
                         quality={95}

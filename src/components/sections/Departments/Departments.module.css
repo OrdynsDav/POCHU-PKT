@@ -3,10 +3,29 @@
 }
 
 .inner {
-    max-width: var(--container-7xl, 80rem);
+    width: 100%;
 }
 
 .linkWrap {
     margin-top: calc(12 * var(--spacing, 0.25rem));
     text-align: center;
+}
+
+.skeletonGrid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 40em) {
+    .skeletonGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 64em) {
+    .skeletonGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }

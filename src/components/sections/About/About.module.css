@@ -3,7 +3,7 @@
 }
 
 .aboutWrapper {
-    max-width: 1280px;
+    max-width: 96rem;
     margin: 0 auto;
 }
 
@@ -13,7 +13,7 @@
     align-items: center;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
     .aboutInner {
         grid-template-columns: 1fr 1fr;
     }
@@ -31,7 +31,7 @@
     gap: 1rem;
 }
 
-@media (width <=600px) {
+@media (width <=37.5em) {
     .aboutStats {
         grid-template-columns: 1fr;
     }
@@ -84,8 +84,8 @@
     border-radius: 1rem;
     padding: 1.25rem;
     background: #fff;
-    border: 1px solid #e8d5c4;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 0.0625rem solid #e8d5c4;
+    box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.05);
     transition:
         border-color 0.3s ease,
         box-shadow 0.3s ease;
@@ -94,8 +94,8 @@
 .statCard:hover {
     border-color: rgba(220, 38, 38, 0.3);
     box-shadow:
-        0 10px 15px -3px rgba(127, 29, 29, 0.05),
-        0 4px 6px -4px rgba(127, 29, 29, 0.05);
+        0 0.625rem 0.9375rem -0.1875rem rgba(127, 29, 29, 0.05),
+        0 0.25rem 0.375rem -0.25rem rgba(127, 29, 29, 0.05);
 }
 
 .statGradient {
@@ -111,7 +111,7 @@
 .statContent {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 0.25rem;
 }
 
 .statValue {
@@ -166,8 +166,8 @@
     padding: 1rem;
     border-radius: 0.75rem;
     background: #fff;
-    border: 1px solid #e8d5c4;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 0.0625rem solid #e8d5c4;
+    box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.05);
     transition:
         border-color 0.3s ease,
         box-shadow 0.3s ease;
@@ -176,8 +176,8 @@
 .featureItem:hover {
     border-color: rgba(220, 38, 38, 0.3);
     box-shadow:
-        0 10px 15px -3px rgba(127, 29, 29, 0.05),
-        0 4px 6px -4px rgba(127, 29, 29, 0.05);
+        0 0.625rem 0.9375rem -0.1875rem rgba(127, 29, 29, 0.05),
+        0 0.25rem 0.375rem -0.25rem rgba(127, 29, 29, 0.05);
 }
 
 .featureBody {
@@ -251,4 +251,74 @@
 
 .featureItem:hover .featureIcon {
     color: #fff;
+}
+
+.skeletonIntro {
+    max-width: 48rem;
+}
+
+.skeletonAboutInner {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+@media (min-width: 64em) {
+    .skeletonAboutInner {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.skeletonColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 0;
+}
+
+.skeletonStats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (width <=37.5em) {
+    .skeletonStats {
+        grid-template-columns: 1fr;
+    }
+}
+
+.skeletonQuote {
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+}
+
+.skeletonFeatures {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.skeletonFeatureItem {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+
+.skeletonFeatureIcon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    flex-shrink: 0;
+}
+
+.skeletonFeatureBody {
+    display: grid;
+    gap: 0.5rem;
+    width: 100%;
+    min-width: 0;
 }

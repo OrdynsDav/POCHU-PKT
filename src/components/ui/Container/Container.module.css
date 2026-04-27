@@ -1,30 +1,30 @@
 .container {
-    max-width: 1440px;
+    max-width: 96rem;
     width: 100%;
     margin: 0 auto;
     padding-inline: clamp(3rem, 1.75rem + 3.5vw, 5rem);
 }
 
-@media (width <=1200px) {
+@media (width <=75em) {
     .container {
         padding-inline: clamp(2.25rem, 1.25rem + 3.2vw, 3.75rem);
     }
 }
 
-@media (width <=768px) {
+@media (width <=48em) {
     .container {
         padding-inline: clamp(1.5rem, 0.875rem + 2.8vw, 2.5rem);
     }
 }
 
-@media (width <=520px) {
+@media (width <=32.5em) {
     .container {
         padding-inline: clamp(1.25rem, 0.5rem + 3.2vw, 2rem);
     }
 }
 
-@media (width <=340px) {
+@media (width <=21.25em) {
     .container {
-        padding-inline: clamp(4px, 2px + 2vw, 8px);
+        padding-inline: clamp(0.25rem, 0.125rem + 2vw, 0.5rem);
     }
 }

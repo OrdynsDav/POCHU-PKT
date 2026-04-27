@@ -7,12 +7,16 @@ export function Section({
   children,
   id,
   className,
+  fallback,
+  fallbackClassName,
 }: {
   children: ReactNode;
   id: string;
   className?: string;
+  fallback?: ReactNode;
+  fallbackClassName?: string;
 }) {
-  const placeholderRef = useRef<HTMLDivElement | null>(null);
+  const placeholderRef = useRef<HTMLElement | null>(null);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -54,17 +58,18 @@ export function Section({
     return () => observer.disconnect();
   }, [isMounted]);
 
-  const sectionClassName = [styles.section, className]
+  const sectionClassName = [styles.section, className, !isMounted ? fallbackClassName : undefined]
     .filter(Boolean)
     .join(" ");
 
-  if (!isMounted) {
-    return <div ref={placeholderRef} id={id} className={sectionClassName} />;
-  }
-
   return (
-    <section id={id} className={sectionClassName}>
-      {children}
+    <section
+      ref={placeholderRef}
+      id={id}
+      className={sectionClassName}
+      aria-busy={!isMounted}
+    >
+      {isMounted ? children : fallback}
     </section>
   );
 }

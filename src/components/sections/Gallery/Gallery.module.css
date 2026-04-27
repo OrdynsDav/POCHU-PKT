@@ -1,9 +1,7 @@
-
-
 .galleryInner {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 2rem;
 }
 
 .galleryTitle {
@@ -15,7 +13,7 @@
 
 .galleryList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
     gap: 1rem;
 }
 
@@ -30,8 +28,8 @@
 }
 
 .galleryButton:focus-visible {
-    outline: 2px solid var(--color-red-600, #dc2626);
-    outline-offset: 4px;
+    outline: 0.125rem solid var(--color-red-600, #dc2626);
+    outline-offset: 0.25rem;
     border-radius: 0.5rem;
 }
 
@@ -48,7 +46,7 @@
     place-items: center;
     padding: clamp(0.75rem, 0.5rem + 1.5vw, 1.5rem);
     background: rgb(0 0 0 / 72%);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(0.375rem);
 }
 
 .lightbox {
@@ -64,8 +62,8 @@
     z-index: 2;
     width: 2.75rem;
     height: 2.75rem;
-    border-radius: 999px;
-    box-shadow: 0 2px 12px rgb(0 0 0 / 25%);
+    border-radius: 62.4375rem;
+    box-shadow: 0 0.125rem 0.75rem rgb(0 0 0 / 25%);
     font-size: 1.25rem;
     line-height: 1;
 }
@@ -73,7 +71,7 @@
 .lightboxSplide {
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 24px 80px rgb(0 0 0 / 45%);
+    box-shadow: 0 1.5rem 5rem rgb(0 0 0 / 45%);
 }
 
 .lightboxSlide {

@@ -1,6 +1,6 @@
 .page {
-  min-height: calc(100vh - 120px);
-  padding: calc(120px + 2rem) 0 3rem;
+  min-height: calc(100vh - 7.5rem);
+  padding: calc(7.5rem + 2rem) 0 3rem;
   background: #fff8f0;
   color: #3d1518;
 }
@@ -11,5 +11,5 @@
   font-size: clamp(1.5rem, 3vw, 2.4rem);
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 }

@@ -20,7 +20,7 @@
     min-height: 0;
 }
 
-@media (width <=768px) {
+@media (width <=48em) {
     .newsCard {
         --media-size: clamp(12rem, min(88vw, 32rem), 32rem);
         --text-title: clamp(1rem, 0.88rem + 0.55vw, 1.25rem);
@@ -33,7 +33,7 @@
 .newsCard:focus-visible.newsCardMedia::before,
 .newsCard:focus-visible.newsCardMedia::before,
 .newsCard:focus.newsCardMedia::before,
-.newsCard:active .newsCardMedia::before  {
+.newsCard:active .newsCardMedia::before {
     opacity: 1;
 }
 
@@ -49,7 +49,7 @@
             #eef3ff 45%,
             #f8fbff 100%);
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 1rem;
 }
 
 .newsCardMedia::before {
@@ -69,7 +69,7 @@
     color: #fff;
 }
 
-@media (width <=768px) {
+@media (width <=48em) {
     .newsCardMedia {
         align-self: stretch;
         max-height: calc(var(--media-size) * var(--media-aspect-h) / var(--media-aspect-w));
@@ -101,7 +101,7 @@
     min-width: 0;
 }
 
-@media (width <= 768px) {
+@media (width <=48em) {
     .newsCardBody {
         padding-inline: 0;
     }

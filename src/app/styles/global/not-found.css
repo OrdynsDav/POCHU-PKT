@@ -1,5 +1,5 @@
 :root {
-    --nf-header-height: 120px;
+    --nf-header-height: 7.5rem;
     --nf-bg: #fff8f0;
     --nf-text: #3d1518;
     --nf-muted: #6b4c3b;
@@ -52,7 +52,7 @@
 }
 
 .nf-icon {
-    filter: drop-shadow(0 8px 24px #7b2d2640);
+    filter: drop-shadow(0 0.5rem 1.5rem #7b2d2640);
     width: 100%;
     height: 100%;
 }
@@ -104,10 +104,10 @@
 
 .nf-sr-only {
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: 0.0625rem;
+    height: 0.0625rem;
     padding: 0;
-    margin: -1px;
+    margin: -0.0625rem;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
@@ -162,18 +162,18 @@
     font-weight: 600;
     color: var(--nf-white);
     background-image: linear-gradient(to right, var(--nf-grad-start), var(--nf-grad-mid));
-    box-shadow: 0 4px 16px var(--nf-shadow-soft);
+    box-shadow: 0 0.25rem 1rem var(--nf-shadow-soft);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-image 0.2s ease;
 }
 
 .nf-button:hover {
     background-image: linear-gradient(to right, var(--nf-grad-hover-start), var(--nf-grad-start));
-    box-shadow: 0 8px 24px var(--nf-shadow-strong);
+    box-shadow: 0 0.5rem 1.5rem var(--nf-shadow-strong);
 }
 
 .nf-button:focus-visible {
-    outline: 2px solid var(--nf-focus);
-    outline-offset: 2px;
+    outline: 0.125rem solid var(--nf-focus);
+    outline-offset: 0.125rem;
 }
 
 .nf-button-icon {
@@ -183,13 +183,13 @@
 }
 
 .nf-button:hover .nf-button-icon {
-    transform: translateX(-2px);
+    transform: translateX(-0.125rem);
 }
 
 @keyframes nf-pop-in {
     from {
         opacity: 0;
-        transform: translateY(10px) scale(0.94);
+        transform: translateY(0.625rem) scale(0.94);
     }
 
     to {
@@ -206,7 +206,7 @@
     }
 
     50% {
-        transform: translateY(-4px);
+        transform: translateY(-0.25rem);
     }
 }
 
@@ -234,7 +234,7 @@
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 26.25em) {
     :root {
         --nf-page-min-h: calc(100vh - var(--nf-header-height));
         --nf-page-py: 1.5rem;

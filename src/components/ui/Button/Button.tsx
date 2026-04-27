@@ -5,7 +5,7 @@ export type ButtonVariant = "primary" | "secondary" | "light" | "outline";
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant;
-  /** На узких экранах (до 600px) кнопка на всю ширину ряда */
+  /** На узких экранах (до 37.5em) кнопка на всю ширину ряда */
   fullWidthNarrow?: boolean;
   /** На всю ширину контейнера на любых ширинах экрана */
   fullWidth?: boolean;

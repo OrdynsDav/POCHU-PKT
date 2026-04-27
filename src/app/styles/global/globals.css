@@ -138,14 +138,14 @@ p {
   margin: 0;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 53.125em) {
   #news ul {
     grid-template-columns: 1fr !important;
   }
 }
 
 /* Applicants benefits grid */
-@media (max-width: 520px) {
+@media (max-width: 32.5em) {
   #applicants .grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
@@ -155,7 +155,7 @@ p {
   }
 }
 
-@media (min-width: 521px) and (max-width: 740px) {
+@media (min-width: 32.5625em) and (max-width: 46.25em) {
   #applicants .grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
@@ -168,10 +168,10 @@ p {
 /* Skip link: скрыт до фокуса клавиатуры */
 .skip-link {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0.0625rem;
+  height: 0.0625rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.0625rem;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;

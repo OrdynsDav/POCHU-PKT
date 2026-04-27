@@ -8,7 +8,7 @@
   --focus-outline: #7b2d26;
   --gradient-from: #ff1904;
   --gradient-to: #ff8787;
-  /* На «узком» десктопе (≈1100px) явно ниже 16px, на широком — до 1rem */
+  /* На «узком» десктопе (≈68.75em) явно ниже 1rem, на широком — до 1rem */
   --nav-top-font: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
   display: flex;
   align-items: center;
@@ -75,7 +75,7 @@
 }
 
 .submenuTrigger:focus-visible {
-  outline: 2px solid var(--focus-outline);
+  outline: 0.125rem solid var(--focus-outline);
 }
 
 .submenuTriggerLabel {
@@ -104,12 +104,12 @@
   transform: translateX(-50%);
   transform-origin: top center;
   border-radius: 0.5rem;
-  border: 1px solid var(--border);
+  border: 0.0625rem solid var(--border);
   background-color: var(--bg);
   padding-block: 0.5rem;
   box-shadow:
-    0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
+    0 0.625rem 0.9375rem -0.1875rem rgb(0 0 0 / 0.1),
+    0 0.25rem 0.375rem -0.25rem rgb(0 0 0 / 0.1);
   opacity: 0;
   visibility: hidden;
   transition:
@@ -164,19 +164,19 @@
   color: transparent;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
   .submenuTrigger {
     max-width: none;
   }
 }
 
-@media (min-width: 1101px) {
+@media (min-width: 68.8125em) {
   .desktopNavList {
     column-gap: 0.75rem;
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 68.75em) {
   .root {
     display: block;
     flex: 0 0 auto;

@@ -22,7 +22,7 @@ export function NewsCard({ link, image, title, date, excerpt }: NewsCardProps) {
           src={image}
           alt={title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1400px) 48vw, 40rem"
+          sizes="(max-width: 48em) 100vw, (max-width: 87.5em) 48vw, 40rem"
           quality={95}
           className={styles.newsCardImg}
         />

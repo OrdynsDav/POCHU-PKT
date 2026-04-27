@@ -25,9 +25,10 @@ export function Hero() {
             alt="Псковский Кооперативный Техникум"
             priority
             className={styles.heroImage}
-            quality={100}
-            width={200}
-            height={200}
+            quality={90}
+            fill
+            sizes="100vw"
+            placeholder="empty"
           />
           <div className={styles.overlayHorizontal} />
           <div className={styles.overlayVertical} />

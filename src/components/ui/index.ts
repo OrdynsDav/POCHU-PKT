@@ -5,6 +5,7 @@ export { Button } from "./Button/Button";
 export type { ButtonProps, ButtonVariant } from "./Button/Button";
 export { CustomLink } from "./CustomLink/CustomLink";
 export type { CustomLinkProps } from "./CustomLink/CustomLink";
+export { Skeleton, SkeletonLine } from "./Skeleton/Skeleton";
 export {
   SectionIntro,
   type SectionIntroVariant,

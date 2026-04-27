@@ -8,6 +8,6 @@
 }
 
 .newsItem {
-    border-bottom: 1px solid var(--border);
-    padding: 25px 0;
+    border-bottom: 0.0625rem solid var(--border);
+    padding: 1.5625rem 0;
 }

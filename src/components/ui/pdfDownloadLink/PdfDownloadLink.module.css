@@ -1,20 +1,20 @@
 .downloadLink {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    border-radius: 12px;
-    border: 1px solid color-mix(in oklab, #c4a574 50%, transparent);
+    gap: 0.75rem;
+    border-radius: 0.75rem;
+    border: 0.0625rem solid color-mix(in oklab, #c4a574 50%, transparent);
     width: 100%;
     min-width: 0;
     box-sizing: border-box;
-    padding: 16px;
-    min-height: 140px;
+    padding: 1rem;
+    min-height: 8.75rem;
 }
 
 .downloadLinkHead {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem;
     min-width: 0;
 }
 
@@ -33,10 +33,10 @@
 
 .downloadLinkIcon {
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 1.125rem;
+    height: 1.125rem;
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: 0.125rem;
     color: #8b4513;
 }
 
@@ -45,7 +45,7 @@
     align-items: center;
     gap: 0.5rem;
     border-radius: 0.5rem;
-    border: 1px solid color-mix(in oklab, #c4a574 50%, transparent);
+    border: 0.0625rem solid color-mix(in oklab, #c4a574 50%, transparent);
     background: rgba(255, 255, 255, 0.8);
     padding: 0.75rem;
     color: #3d1518;
