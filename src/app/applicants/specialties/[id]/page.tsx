@@ -2,24 +2,16 @@
 
 import { ViewTransition } from "react";
 import { PageTitle } from "@/components/ui/PageTitle/PageTitle";
-import { notFound, useParams } from "next/navigation";
 import { useSpecialtyNavTransition } from "@/components/specialties/SpecialtyNavTransitionProvider";
 import { SpecialtyDetailSkeleton } from "@/components/specialties/SpecialtyDetailSkeleton/SpecialtyDetailSkeleton";
 import stylesLink from "./page.module.css";
-import { SPECIALTIES } from "@/data/specialties";
 import { getSpecialtyBlocks } from "@/data/specialty-content";
 import { SpecialtyContent } from "@/components/specialties/SpecialtyContent/SpecialtyContent";
+import { useGetSpecialty } from "@/lib/hooks/useGetSpecialty";
 
 export default function Page() {
-    const params = useParams();
     const { isPending } = useSpecialtyNavTransition();
-    const idParam = params.id;
-    const id = typeof idParam === "string" ? idParam : idParam?.[0];
-
-    const speciality = SPECIALTIES.find((spec) => spec.id === id);
-    if (!speciality) {
-        return notFound();
-    }
+    const speciality = useGetSpecialty();
 
     const Icon = speciality.icon;
 

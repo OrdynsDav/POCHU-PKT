@@ -1,9 +1,6 @@
-"use client";
-
 import { Skeleton, SkeletonLine } from "@/components/ui/Skeleton/Skeleton";
 import styles from "./SpecialtyDetailSkeleton.module.css";
 
-/** Только Skeleton / SkeletonLine — каркас под заголовок страницы специальности и карточку текста */
 export function SpecialtyDetailSkeleton() {
   return (
     <div className={styles.root}>

@@ -10,6 +10,7 @@ import {
 import { formatNewsDateLong, formatNewsTime } from "@/lib/formatNewsDate";
 import { NewsArticleView } from "@/components/news/NewsArticleView/NewsArticleView";
 import styles from "./page.module.css";
+import { Breadcrumbs } from "@/components/Breadcrumbs/Breadcrumbs";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -50,27 +51,16 @@ export default async function NewsArticlePage({ params }: PageProps) {
   const dateLabel = formatNewsDateLong(article.publishedAt);
   const timeLabel = formatNewsTime(article.publishedAt);
 
+  const breadcrumbs = [
+    { label: "Главная", href: "/" },
+    { label: "Новости", href: "/life/news" },
+    { label: article.title, isCurrent: true },
+  ];
+
   return (
     <section className={styles.page}>
       <Container>
-        <nav aria-label="Навигационная цепочка">
-          <ol className={styles.breadcrumbs}>
-            <li>
-              <Link href="/">Главная</Link>
-            </li>
-            <li className={styles.sep} aria-hidden>
-              /
-            </li>
-            <li>
-              <Link href="/life/news">Новости</Link>
-            </li>
-            <li className={styles.sep} aria-hidden>
-              /
-            </li>
-            <li className={styles.crumbCurrent}>{article.title}</li>
-          </ol>
-        </nav>
-
+        <Breadcrumbs items={breadcrumbs} />
         <article className={styles.article}>
           <header className={styles.heroBand}>
             <div className={styles.meta}>

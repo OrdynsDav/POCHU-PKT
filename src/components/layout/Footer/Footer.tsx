@@ -52,7 +52,8 @@ export function Footer() {
                 />
                 <div className={styles.brandName}>
                   <div>Псковский</div>
-                  <div>Кооперативный Техникум</div>
+                  <div>Кооперативный</div>
+                  <div>Техникум</div>
                 </div>
               </div>
               <p className={styles.brandDesc}>

@@ -1,0 +1,25 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-brown-600);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+}
+
+.link:hover,
+.link:active,
+.link:focus,
+.link:focus-visible,
+.link:focus-within {
+    color: var(--color-red-600);
+    text-decoration: underline;
+    text-underline-offset: 0.8rem;
+}
