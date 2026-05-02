@@ -33,19 +33,36 @@ export function PdfDownloadLink({ href, label, className }: PdfDownloadLinkProps
   );
 }
 
+export type PdfAttachmentItem = { href: string; file: string };
+
 export type PdfAttachmentsSectionProps = {
-  pdfAppRoute: string;
+  /** Маршрут страницы: PDF из pdf-manifest.json с этим sourcePage */
+  pdfAppRoute?: string;
+  /** Явный список (например из контента специальности); если задан — маршрут не используется */
+  items?: PdfAttachmentItem[];
   heading?: string;
+  className?: string;
 };
+
 export function PdfAttachmentsSection({
   pdfAppRoute,
+  items: explicitItems,
   heading = "Документы для скачивания",
+  className,
 }: PdfAttachmentsSectionProps) {
-  const items = getPdfsForRoute(pdfAppRoute);
+  const items: PdfAttachmentItem[] =
+    explicitItems ??
+    (pdfAppRoute !== undefined ? getPdfsForRoute(pdfAppRoute) : []);
   if (items.length === 0) return null;
 
   return (
-    <div className={styles.attachmentsSection}>
+    <div
+      className={
+        className
+          ? `${styles.attachmentsSection} ${className}`
+          : styles.attachmentsSection
+      }
+    >
       <h2 className={styles.attachmentsHeading}>{heading}</h2>
       <ul className={styles.attachmentsList}>
         {items.map((f) => (

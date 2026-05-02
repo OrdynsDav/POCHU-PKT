@@ -15,6 +15,7 @@ export {
   PdfDownloadLink,
   PdfAttachmentsSection,
 } from "./pdfDownloadLink/PdfDownloadLink";
+export type { PdfAttachmentItem } from "./pdfDownloadLink/PdfDownloadLink";
 export {
   ApplicationDialog,
   APPLICATION_DIALOG_ID,

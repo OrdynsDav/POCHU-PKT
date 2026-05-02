@@ -5,7 +5,7 @@ import styles from "./Skeleton.module.css";
 
 type SkeletonProps = {
   className?: string;
-  width?: CSSProperties["width"];
+  width?: CSSProperties["maxWidth"];
   height?: CSSProperties["height"];
   backgroundColor?: string;
   rounded?: "md" | "full";
@@ -27,9 +27,9 @@ export function Skeleton({
     .join(" ");
 
   const style = {
-    width,
     height,
     ...(backgroundColor ? ({ ["--sk-bg"]: backgroundColor } as CSSProperties) : undefined),
+    ...(width ? ({ ["--sk-max-width"]: width } as CSSProperties) : undefined),
   };
 
   return <div className={rootClass} style={style} aria-hidden="true" />;

@@ -10,8 +10,19 @@ import {
   Scale,
 } from "lucide-react";
 
+export type SpecialtyContentId =
+  | "trade"
+  | "bank"
+  | "cook"
+  | "lawEnforcement"
+  | "software"
+  | "insurance"
+  | "economy"
+  | "jurisprudence";
+
 export type SpecialtyItem = {
   id: string;
+  contentId: SpecialtyContentId;
   title: string;
   code: string;
   duration: string;
@@ -22,6 +33,7 @@ export type SpecialtyItem = {
 export const SPECIALTIES: readonly SpecialtyItem[] = [
   {
     id: "trade",
+    contentId: "trade",
     title: "Торговое дело",
     code: "38.02.08",
     duration: "2 г. 10 мес.",
@@ -29,6 +41,7 @@ export const SPECIALTIES: readonly SpecialtyItem[] = [
   },
   {
     id: "bank",
+    contentId: "bank",
     title: "Банковское дело",
     code: "38.02.07",
     duration: "2 г. 10 мес.",
@@ -36,6 +49,7 @@ export const SPECIALTIES: readonly SpecialtyItem[] = [
   },
   {
     id: "cook",
+    contentId: "cook",
     title: "Поварское и кондитерское дело",
     code: "43.02.15",
     duration: "3 г. 10 мес.",
@@ -43,6 +57,7 @@ export const SPECIALTIES: readonly SpecialtyItem[] = [
   },
   {
     id: "lawEnforcement",
+    contentId: "lawEnforcement",
     title: "Правоохранительная деятельность",
     code: "40.02.02",
     duration: "3 г. 10 мес.",
@@ -50,6 +65,7 @@ export const SPECIALTIES: readonly SpecialtyItem[] = [
   },
   {
     id: "software",
+    contentId: "software",
     title: "Разработка и управление программным обеспечением",
     code: "09.02.11",
     duration: "3 г. 10 мес.",
@@ -57,6 +73,7 @@ export const SPECIALTIES: readonly SpecialtyItem[] = [
   },
   {
     id: "insurance",
+    contentId: "insurance",
     title: "Страховое дело (по отраслям)",
     code: "38.02.02",
     duration: "2 г. 10 мес.",
@@ -64,6 +81,7 @@ export const SPECIALTIES: readonly SpecialtyItem[] = [
   },
   {
     id: "economy",
+    contentId: "economy",
     title: "Экономика и бухгалтерский учёт (по отраслям)",
     code: "38.02.01",
     duration: "2 г. 10 мес.",
@@ -71,6 +89,7 @@ export const SPECIALTIES: readonly SpecialtyItem[] = [
   },
   {
     id: "jurisprudence",
+    contentId: "jurisprudence",
     title: "Юриспруденция",
     code: "40.02.04",
     duration: "3 г. 10 мес.",

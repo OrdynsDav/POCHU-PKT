@@ -131,11 +131,12 @@
 
 .submenuItem {
   break-inside: avoid;
+  padding-inline: 1rem;
 }
 
 .submenuLink {
   display: block;
-  padding: 0.625rem 1rem;
+  padding: 0.625rem 0;
   text-align: left;
   font-size: var(--text-sm);
   line-height: 1.375;

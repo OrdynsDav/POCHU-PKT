@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { SPECIALTIES } from "./specialties";
 import styles from "./SpecialtiesList.module.css";
+import { SPECIALTIES } from "@/data/specialties";
 
 const ANIM_DELAYS = [
   "anim-delay-4",
@@ -26,10 +26,8 @@ export function SpecialtiesList() {
         return (
           <li key={dept.id} className={spanClass}>
             <Link
-              href={'/'}
+              href={`/applicants/specialties/${dept.id}`}
               className={`${styles.card} anim-stagger ${delayClass}`}
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <div className={styles.topBar} aria-hidden />
               <div className={styles.iconWrap}>
