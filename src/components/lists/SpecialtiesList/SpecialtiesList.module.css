@@ -13,13 +13,13 @@
     }
 }
 
-@media (min-width: 64em) {
+@media (min-width: 64rem) {
     .list {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
 
-@media (min-width: 64em) and (max-width: 81.25em) {
+@media (min-width: 64rem) and (max-width: 81.25em) {
     .list {
         grid-template-columns: repeat(6, minmax(0, 1fr));
     }

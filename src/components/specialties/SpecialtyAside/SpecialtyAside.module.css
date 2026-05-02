@@ -29,7 +29,7 @@
   width: 0.25rem;
 }
 
-@media (min-width: 64em) {
+@media (min-width: 64rem) {
   .navScroll {
     flex: 1 1 auto;
     min-height: 0;
