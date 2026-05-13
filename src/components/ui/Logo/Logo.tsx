@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { memo } from "react";
 import styles from "./Logo.module.css";
 
 interface LogoProps {
@@ -7,7 +8,7 @@ interface LogoProps {
   className?: string;
 }
 
-export function Logo({ shortName, href, className }: LogoProps) {
+function LogoInner({ shortName, href, className }: LogoProps) {
   return (
     <Link
       className={[styles.link, className].filter(Boolean).join(" ")}
@@ -17,3 +18,5 @@ export function Logo({ shortName, href, className }: LogoProps) {
     </Link>
   );
 }
+
+export const Logo = memo(LogoInner);

@@ -19,7 +19,7 @@
 
 .title {
   margin: 0 0 var(--si-title-mb);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.2;
   font-size: clamp(1.7rem, 2.2vw + 1rem, 3rem);
   color: var(--si-title-color);

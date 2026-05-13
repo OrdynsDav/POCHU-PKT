@@ -138,6 +138,23 @@
   box-shadow: 0 10px 24px rgba(61, 21, 24, 0.06);
 }
 
+.cardOpen {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: inherit;
+  border-radius: 0.85rem;
+}
+
+.cardOpen:focus-visible {
+  outline: 0.125rem solid var(--color-red-600, #dc2626);
+  outline-offset: 0.2rem;
+}
+
 .cardMedia {
   position: relative;
   width: 100%;

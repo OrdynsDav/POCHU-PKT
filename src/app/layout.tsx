@@ -1,4 +1,5 @@
 import "@/app/styles/styles.css";
+import { fontUnbounded } from "@/app/fonts";
 import { Header, Footer } from "@/components/layout";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -135,7 +136,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
+      <body className={fontUnbounded.className}>
         <SpeedInsights />
         <a
           href="#main-content"

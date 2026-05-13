@@ -20,3 +20,5 @@ export {
   ApplicationDialog,
   APPLICATION_DIALOG_ID,
 } from "./ApplicationDialog/ApplicationDialog";
+export { PhotoDetailSlider } from "./PhotoDetailSlider/PhotoDetailSlider";
+export type { PhotoDetailSlide, PhotoDetailSliderProps } from "./PhotoDetailSlider/PhotoDetailSlider";

@@ -118,7 +118,7 @@
     margin: 0;
     font-size: var(--text-stat);
     line-height: 1;
-    font-weight: 800;
+    font-weight: 600;
     color: #3d1518;
     transition: color 0.3s ease;
 }

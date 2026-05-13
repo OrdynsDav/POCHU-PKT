@@ -1,10 +1,9 @@
-"use client";
-
 import { GraduationCap } from "lucide-react";
-import { Container, Logo } from "@/components/ui";
+import { Container } from "@/components/ui";
 import Image from "next/image";
 import { HeroActions } from "./HeroActions/HeroActions";
 import { siteConfig } from "@/config/site";
+import { HeroBrandRow } from "./HeroBrandRow/HeroBrandRow";
 import styles from "./Hero.module.css";
 
 const HERO_IMG = "/images/hero.webp";
@@ -43,13 +42,7 @@ export function Hero() {
               <GraduationCap className={styles.badgeIcon} />
               <span>Приём на 2026/2027 учебный год открыт</span>
             </div>
-            <div className={`${styles.logoWrap} hero-anim-right hero-delay-120`}>
-              <Logo
-                shortName={logo.shortName}
-                href={logo.href}
-                className={styles.logo}
-              />
-            </div>
+            <HeroBrandRow shortName={logo.shortName} href={logo.href} />
             <h1 id="hero-heading" className={styles.heading}>
               <span className={`${styles.headingLine} hero-anim-left hero-delay-180`}>
                 Псковский
@@ -64,9 +57,7 @@ export function Hero() {
               </span>
             </h1>
 
-            <p
-              className={`${styles.lead} hero-anim-right hero-delay-260`}
-            >
+            <p className={`${styles.lead} hero-anim-right hero-delay-260`} >
               Профессиональное образование с&nbsp;1945&nbsp;года. Современные
               специальности, опытные преподаватели и&nbsp;успешные выпускники.
             </p>

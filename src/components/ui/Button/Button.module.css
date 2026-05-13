@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 1rem 2rem;
+    padding: 1rem clamp(1rem, 0.5rem + 2.5vw, 2rem);
     font-size: var(--text-base);
     font-weight: 700;
     line-height: 1.25;

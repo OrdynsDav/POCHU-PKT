@@ -32,7 +32,7 @@ export function NewsArticleView({ article }: NewsArticleViewProps) {
       <NewsArticleGallery images={article.images} title={article.title} />
       <div className={styles.body}>
         {article.paragraphs.map((p, i) => (
-          <p key={i}>{p}</p>
+          <p key={i*performance.now()*Math.random()+`-news-article-paragraph-${p}`}>{p}</p>
         ))}
       </div>
     </>

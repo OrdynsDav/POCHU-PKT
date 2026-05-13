@@ -95,22 +95,10 @@
     min-height: calc(6 * var(--spacing, 0.25rem));
 }
 
-.logoWrap {
-    width: fit-content;
-}
-
-.logo {
-    min-width: clamp(4rem, 3.5rem + 2.5vw, 6rem);
-    min-height: clamp(4rem, 3.5rem + 2.5vw, 6rem);
-    font-size: clamp(1.25rem, 1rem + 0.9vw, 1.75rem);
-    line-height: clamp(1.75rem, 1.45rem + 1.1vw, 2.25rem);
-    margin-bottom: 1.5rem;
-}
-
 .heading {
     font-size: clamp(1.85rem, 1.05rem + 4vw, 4.5rem);
     line-height: 1.1;
-    font-weight: 800;
+    font-weight: 600;
     color: #fff;
     margin-bottom: calc(6 * var(--spacing, 0.25rem));
 }

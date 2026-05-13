@@ -1,9 +1,9 @@
-import { PdfAttachmentsSection } from "@/components/ui/pdfDownloadLink/PdfDownloadLink";
 import styles from "../page.module.css";
 import { Container } from "@/components/ui";
 import { PageTitle } from "@/components/ui/PageTitle/PageTitle";
 import Image from "next/image";
 import pageStyles from "./page.module.css";
+import { ScheduleAppGallery } from "./ScheduleAppGallery";
 
 const screenshots = [
   {
@@ -104,22 +104,10 @@ export default function LifeSchedulePage() {
             <p className={pageStyles.galleryLead}>
               Несколько экранов, чтобы быстро понять функциональность и&nbsp;навигацию.
             </p>
-            <div className={pageStyles.gallery} role="list">
-              {screenshots.map((img) => (
-                <figure key={img.src} className={pageStyles.card} role="listitem">
-                  <div className={pageStyles.cardMedia}>
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      sizes="(max-width: 768px) 70vw, (max-width: 1200px) 33vw, 280px"
-                      className={pageStyles.cardImage}
-                    />
-                  </div>
-                  <figcaption className={pageStyles.caption}>{img.alt}</figcaption>
-                </figure>
-              ))}
-            </div>
+            <ScheduleAppGallery
+              slides={screenshots}
+              galleryTitle="Скриншоты мобильного приложения"
+            />
           </div>
         </div>
       </Container>
