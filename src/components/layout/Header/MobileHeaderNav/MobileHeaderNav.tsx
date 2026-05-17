@@ -48,7 +48,7 @@ export function MobileHeaderNav({ open, onOpenChange }: MobileHeaderNavProps) {
         className={`${styles.drawer} ${open ? styles.drawerOpen : styles.drawerClosed}`}
       >
         <div className={styles.drawerHeader}>
-          <Logo shortName="ПКТ" href="/" />
+          <Logo href="/" />
           <button
             type="button"
             aria-label="Закрыть меню"
