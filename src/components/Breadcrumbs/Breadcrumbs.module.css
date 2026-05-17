@@ -23,3 +23,7 @@
     text-decoration: underline;
     text-underline-offset: 0.8rem;
 }
+
+.current {
+    padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+}
