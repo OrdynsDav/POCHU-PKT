@@ -1,9 +1,8 @@
 import { Suspense } from "react";
-import { Container, Section } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { SpecialtyAside } from "@/components/specialties/SpecialtyAside/SpecialtyAside";
 import { SpecialtyNavTransitionProvider } from "@/components/specialties/SpecialtyNavTransitionProvider";
 import { SpecialtyDetailSkeleton } from "@/components/specialties/SpecialtyDetailSkeleton/SpecialtyDetailSkeleton";
-import applicantsPageStyles from "../../page.module.css";
 import layoutStyles from "./layout.module.css";
 import { SpecialtiesNavigation } from "@/components/specialties/SpecialtiesNavigation/SpecialtiesNavigation";
 
@@ -13,7 +12,7 @@ export default function SpecialtyDetailLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Section id="specialty" className={applicantsPageStyles.page}>
+    <section id="specialty" className="page">
       <Container>
         <SpecialtiesNavigation />
         <SpecialtyNavTransitionProvider>
@@ -38,6 +37,6 @@ export default function SpecialtyDetailLayout({
           </div>
         </SpecialtyNavTransitionProvider>
       </Container>
-    </Section>
+    </section>
   );
 }
