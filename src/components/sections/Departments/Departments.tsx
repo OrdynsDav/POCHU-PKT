@@ -1,6 +1,7 @@
-import { Container, CustomLink, Section, SectionIntro, Skeleton, SkeletonLine } from "@/components/ui";
+import { Container, CustomLink, Section, SectionIntro } from "@/components/ui";
 import styles from "./Departments.module.css";
 import { SpecialtiesList } from "@/components/lists/SpecialtiesList/SpecialtiesList";
+import { DepartmentsSkeleton } from "@/components/skeletons/DepartmentsSkeleton/DepartmentsSkeleton";
 
 export function Departments() {
   return (
@@ -8,22 +9,7 @@ export function Departments() {
       id="departments"
       aria-labelledby="departments-heading"
       className={styles.departments}
-      fallback={
-        <Container>
-          <div className={styles.inner}>
-            <div style={{ maxWidth: "48rem", width: "100%", display: "flex", alignItems: "center", flexDirection: "column", gap: "0.75rem", margin: "0 auto" }}>
-              <SkeletonLine width="7rem" />
-              <SkeletonLine width="18rem" height="1.6rem" />
-              <SkeletonLine width="28rem" />
-            </div>
-            <div className={styles.skeletonGrid}>
-              {Array.from({ length: 8 }).map((_, idx) => (
-                <Skeleton key={idx} height="9.25rem" />
-              ))}
-            </div>
-          </div>
-        </Container>
-      }
+      fallback={<DepartmentsSkeleton />}
     >
       <Container>
         <div className={styles.inner}>

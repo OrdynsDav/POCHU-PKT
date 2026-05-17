@@ -5,12 +5,11 @@ import {
   CustomLink,
   Section,
   SectionIntro,
-  Skeleton,
-  SkeletonLine,
 } from "@/components/ui";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import styles from "./Applicants.module.css";
+import { ApplicantsSkeleton } from "@/components/skeletons/ApplicantsSkeleton/ApplicantsSkeleton";
 
 const GRADUATION_IMG = "/images/applicants.webp";
 
@@ -30,30 +29,7 @@ export function Applicants() {
       aria-labelledby="applicants-heading"
       className={styles.applicants}
       fallbackClassName={styles.skeletonSection}
-      fallback={
-          <Container>
-            <div className={styles.content}>
-              <div style={{ maxWidth: "48rem", width: "100%", display: "flex", flexDirection: "column", gap: "0.75rem", margin: "0 auto 2.5rem", alignItems: "center" }}>
-                <SkeletonLine width="10rem" className={styles.skeletonBadge} backgroundColor={`var(--skeleton-line-bc)`}/>
-                <SkeletonLine width="26rem" height="1.6rem" className={styles.skeletonTitle} backgroundColor={`var(--skeleton-line-bc)`}/>
-                <div className={styles.skeletonDescriptionWrapper}>
-                  {Array.from({ length: 3 }).map((_, idx) => (
-                    <Skeleton key={idx} height="1.25rem" width="100%" backgroundColor={`var(--skeleton-line-bc)`}/>
-                  ))}
-                </div>
-              </div>
-              <div className={styles.skeletonActions}>
-                <Skeleton height="3rem" width="100%" backgroundColor={`var(--skeleton-line-bc)`}/>
-                <Skeleton height="3rem" width="100%" backgroundColor={`var(--skeleton-line-bc)`}/>
-              </div>
-              <div className={styles.skeletonBenefits}>
-                {Array.from({ length: 3 }).map((_, idx) => (
-                  <Skeleton key={idx} height="5.5rem" backgroundColor={`var(--skeleton-line-bc)`}/>
-                ))}
-              </div>
-            </div>
-          </Container>
-      }
+      fallback={<ApplicantsSkeleton /> }
     >
       <Container>
         <div className={styles.mediaLayer}>
@@ -104,7 +80,7 @@ export function Applicants() {
                 className={`${styles.benefitCard} anim-stagger ${benefitDelayClass(index)}`}
               >
                 <h3 className={styles.benefitValue}>{item.value}</h3>
-                <span className={styles.benefitLabel}>{item.label}</span>
+                <p className={styles.benefitLabel}>{item.label}</p>
               </li>
             ))}
           </ul>

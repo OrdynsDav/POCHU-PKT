@@ -1,0 +1,39 @@
+.content {
+    position: relative;
+    z-index: 10;
+    max-width: var(--container-4xl, 56rem);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skeletonActions {
+    display: flex;
+    justify-content: center;
+    gap: calc(4 * var(--spacing, 0.25rem));
+    width: 100%;
+}
+
+@media (max-width: 37.5em) {
+    .skeletonActions {
+        flex-direction: column;
+    }
+}
+
+.skeletonBenefits {
+    display: grid;
+    gap: calc(6 * var(--spacing, 0.25rem));
+    margin-top: calc(16 * var(--spacing, 0.25rem));
+}
+
+.skeletonDescriptionWrapper {
+    display: grid;
+    gap: calc(3 * var(--spacing, 0.25rem));
+    width: 100%;
+    margin-top: 1rem;
+}
+
+@media (min-width: 40em) {
+    .skeletonBenefits {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
