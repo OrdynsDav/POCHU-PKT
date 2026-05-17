@@ -46,7 +46,6 @@ export function Footer() {
             <div className={styles.brand}>
               <div className={styles.brandHead}>
                 <Logo
-                  shortName={logo.shortName}
                   href={logo.href}
                   className={styles.brandLogo}
                 />

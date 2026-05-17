@@ -14,7 +14,7 @@ export function Header() {
     >
       <Container>
         <div className={styles.headerWrapper}>
-          <Logo shortName={logo.shortName} href={logo.href} />
+          <Logo href={logo.href} />
           <HeaderNav />
         </div>
       </Container>
