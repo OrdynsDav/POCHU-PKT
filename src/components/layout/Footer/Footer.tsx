@@ -90,9 +90,9 @@ export function Footer() {
 
             {/* Разделы */}
             <nav aria-label="Быстрые ссылки">
-              <h4 id="quick-links-heading" className={styles.navHeading}>
+              <h2 id="quick-links-heading" className={styles.navHeading}>
                 Разделы
-              </h4>
+              </h2>
               <ul className={styles.navList} aria-labelledby="quick-links-heading">
                 {quickLinks.map((link) => (
                   <li key={link.label}>
@@ -111,9 +111,9 @@ export function Footer() {
 
             {/* Ресурсы */}
             <nav aria-label="Полезные ресурсы">
-              <h4 id="resources-heading" className={styles.navHeading}>
+              <h2 id="resources-heading" className={styles.navHeading}>
                 Ресурсы
-              </h4>
+              </h2>
               <ul className={styles.navList} aria-labelledby="resources-heading">
                 {resources.map((link) => (
                   <li key={link.label}>
@@ -133,9 +133,9 @@ export function Footer() {
 
             {/* Контакты */}
             <address className={styles.address}>
-              <h4 id="contacts-heading" className={styles.navHeading}>
+              <h2 id="contacts-heading" className={styles.navHeading}>
                 Контакты
-              </h4>
+              </h2>
               <div className={styles.contactList} aria-labelledby="contacts-heading">
                 <a
                   className={styles.contactItem}

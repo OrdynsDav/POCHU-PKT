@@ -58,8 +58,9 @@ export function HeaderNav() {
                   aria-haspopup="true"
                   aria-controls={`submenu-${item.id}`}
                   title={item.label}
+                  role="menuitem"
                 >
-                  <span className={styles.submenuTriggerLabel}>
+                  <span className={styles.submenuTriggerLabel} role="menuitemlabel">
                     {item.label}
                   </span>
                   <ChevronDown
