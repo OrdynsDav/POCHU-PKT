@@ -1,0 +1,6 @@
+.page {
+    min-height: calc(100vh - 7.5rem);
+    padding: clamp(9.5rem, 7.5rem + 5vw, 12rem) 0 clamp(2.5rem, 1.5rem + 3vw, 4rem);
+    background: #fff8f0;
+    color: #3d1518;
+}

@@ -1,6 +1,5 @@
 import { PdfAttachmentsSection } from "@/components/ui/pdfDownloadLink/PdfDownloadLink";
 import { Container } from "@/components/ui";
-import styles from "../page.module.css";
 import { NewsList } from "@/components/lists/NewsList/NewsList";
 import { PageTitle } from "@/components/ui/PageTitle/PageTitle";
 
@@ -36,7 +35,7 @@ const news = [
 
 export default function StudentsNewsPage() {
   return (
-    <section className={styles.page}>
+    <section className="page">
       <Container>
         <PageTitle title="Новости" />
         <PdfAttachmentsSection pdfAppRoute="/students/news" />

@@ -1,4 +1,6 @@
 @import './global/normalize.css' layer(base);
 @import './global/globals.css' layer(base);
+@import './global/page.css' layer(base);
 @import './animations/hero.css' layer(base);
 @import './animations/section-elements.css' layer(base);
+@import './lib/splide.css' layer(base);

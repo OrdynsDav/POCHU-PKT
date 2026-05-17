@@ -1,6 +1,4 @@
 .page {
-    min-height: calc(100vh - 7.5rem);
-    padding: calc(7.5rem + 2rem) 0 clamp(2.5rem, 1.5rem + 3vw, 4rem);
     background: linear-gradient(180deg, #fff8f0 0%, #ffffff 28%, #fff8f0 100%);
     color: var(--color-burgundy-950, #3d1518);
 }

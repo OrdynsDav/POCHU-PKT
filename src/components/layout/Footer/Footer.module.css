@@ -23,7 +23,7 @@
     }
 }
 
-@media (min-width: 64em) {
+@media (min-width: 70em) {
     .grid {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -41,10 +41,6 @@
     margin-bottom: calc(6 * var(--spacing, 0.25rem));
 }
 
-.brandLogo {
-    min-width: calc(15 * var(--spacing, 0.25rem));
-    height: calc(15 * var(--spacing, 0.25rem));
-}
 
 .brandName {
     font-size: var(--text-sm);

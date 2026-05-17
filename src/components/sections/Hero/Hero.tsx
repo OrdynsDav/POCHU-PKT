@@ -2,15 +2,12 @@ import { GraduationCap } from "lucide-react";
 import { Container } from "@/components/ui";
 import Image from "next/image";
 import { HeroActions } from "./HeroActions/HeroActions";
-import { siteConfig } from "@/config/site";
 import { HeroBrandRow } from "./HeroBrandRow/HeroBrandRow";
 import styles from "./Hero.module.css";
 
 const HERO_IMG = "/images/hero.webp";
 
 export function Hero() {
-  const { logo } = siteConfig;
-
   return (
     <section
       id="hero"
@@ -42,7 +39,7 @@ export function Hero() {
               <GraduationCap className={styles.badgeIcon} />
               <span>Приём на 2026/2027 учебный год открыт</span>
             </div>
-            <HeroBrandRow shortName={logo.shortName} href={logo.href} />
+            <HeroBrandRow />
             <h1 id="hero-heading" className={styles.heading}>
               <span className={`${styles.headingLine} hero-anim-left hero-delay-180`}>
                 Псковский

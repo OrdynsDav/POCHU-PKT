@@ -58,7 +58,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
   ];
 
   return (
-    <section className={styles.page}>
+    <section className={`${styles.page} page`}>
       <Container>
         <Breadcrumbs items={breadcrumbs} />
         <article className={styles.article}>

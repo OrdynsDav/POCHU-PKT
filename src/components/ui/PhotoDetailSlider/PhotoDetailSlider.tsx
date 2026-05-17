@@ -14,16 +14,9 @@ export type PhotoDetailSlide = {
 
 export type PhotoDetailSliderProps = {
   slides: readonly PhotoDetailSlide[];
-  /** Подписи доступности для диалога и слайдера. */
   title: string;
-  /** Лайтбокс открыт. */
   open: boolean;
-  /** Индекс снимка, с которого открыть слайдер (0 … slides.length − 1). */
   startIndex: number;
-  /**
-   * Закрыть лайтбокс. Обычный колбэк с клиента (не React Server Action);
-   * суффикс `Action` из‑за эвристики Next для пропсов client-компонентов.
-   */
   onCloseAction: () => void;
 };
 
@@ -32,10 +25,6 @@ function clampIndex(index: number, length: number) {
   return Math.min(Math.max(0, Math.floor(index)), length - 1);
 }
 
-/**
- * Только полноэкранный просмотр: Splide внутри оверлея.
- * Превью и вёрстка страницы задаются снаружи; открытие через `open` и `startIndex`.
- */
 export function PhotoDetailSlider({
   slides,
   title,

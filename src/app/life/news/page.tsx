@@ -1,5 +1,4 @@
 import { PdfAttachmentsSection } from "@/components/ui/pdfDownloadLink/PdfDownloadLink";
-import styles from "../page.module.css";
 import { Container } from "@/components/ui";
 import { PageTitle } from "@/components/ui/PageTitle/PageTitle";
 import { NewsList } from "@/components/lists/NewsList/NewsList";
@@ -10,7 +9,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Новости",
   description: "Новости в ПКТ",
   path: "/life/news",
-  
+
 })
 
 const news = [
@@ -45,7 +44,7 @@ const news = [
 
 export default function LifeNewsPage() {
   return (
-    <section className={styles.page}>
+    <section className="page">
       <Container>
         <PageTitle title="Новости" />
         <PdfAttachmentsSection pdfAppRoute="/life/news" />
