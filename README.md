@@ -1,47 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project bootstrapped with `[create-next-app](https://nextjs.org/docs/app/api-reference/cli/create-next-app)`.
 
 ## Getting Started
 
-First, run the development server:
+First, install all packages:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+```
+Then running the development server:
+```bash
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Windows: "Slow filesystem detected" (ускорение dev)
-
-Если Next.js пишет `Slow filesystem detected` (часто из‑за антивируса/медленного диска), есть 2 практичных решения.
-
-### 1) Исключение для Windows Defender (рекомендуется)
-
-Добавьте папку проекта в исключения Defender (PowerShell от имени администратора):
-
-```powershell
-Add-MpPreference -ExclusionPath "D:\POCHU-PKT"
-```
-
-### 2) Перенос `.next` в быстрый локальный кэш (junction)
-
-Это переносит `.next` в `%LOCALAPPDATA%` и оставляет в проекте ссылку (junction), чтобы сборка не упиралась в медленный диск.
-
-1) Остановите `pnpm dev`
-2) Выполните:
-
-```powershell
-.\scripts\windows\setup-fast-next-cache.ps1
-```
+This project uses `[next/font](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)` to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
 
