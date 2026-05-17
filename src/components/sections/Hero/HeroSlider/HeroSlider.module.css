@@ -1,0 +1,92 @@
+.slider {
+    --slider-line: 1.6;
+    margin: 0;
+    max-height: clamp(4rem, 3.5rem + 2.5vw, 6rem);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.sliderTrack {
+    width: 100%;
+    overflow: hidden;
+    font-size: clamp(1.125rem, 0.95rem + 0.85vw, 1.65rem);
+    line-height: var(--slider-line);
+    height: 1lh;
+    max-height: 1lh;
+}
+
+.sliderText {
+    --slider-step: calc(1em * var(--slider-line));
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    line-height: var(--slider-line);
+    letter-spacing: 0.02em;
+    color: rgb(255 255 255 / 92%);
+    text-shadow: 0 0.0625rem 0.25rem rgb(61 21 24 / 45%);
+    animation: slide 9s infinite;
+    will-change: transform;
+}
+
+.sliderTextItem {
+    height: var(--slider-step);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(0);
+        animation-timing-function: linear;
+    }
+
+    22.22% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    33.33% {
+        transform: translateY(calc(-1 * var(--slider-step)));
+        animation-timing-function: linear;
+    }
+
+    55.56% {
+        transform: translateY(calc(-1 * var(--slider-step)));
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    66.67% {
+        transform: translateY(calc(-2 * var(--slider-step)));
+        animation-timing-function: linear;
+    }
+
+    88.89% {
+        transform: translateY(calc(-2 * var(--slider-step)));
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    97% {
+        transform: translateY(calc(-3 * var(--slider-step)));
+        animation-timing-function: linear;
+    }
+
+    99.99% {
+        transform: translateY(calc(-3 * var(--slider-step)));
+        animation-timing-function: linear;
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sliderText {
+        animation: none;
+        transform: translateY(0);
+    }
+}
