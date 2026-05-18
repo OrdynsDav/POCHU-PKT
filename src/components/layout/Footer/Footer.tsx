@@ -12,18 +12,18 @@ interface QuickLink {
 
 const quickLinks: QuickLink[] = [
   { label: "О техникуме", href: "/about/" },
-  { label: "Отделения", href: "/departments/" },
+  { label: "Очное отделение", href: "/departments/fulltime/" },
   { label: "Абитуриентам", href: "/applicants/" },
   { label: "Студентам", href: "/students/" },
   { label: "Преподавателям", href: "/teachers/" },
-  { label: "Расписание", href: "/schedule/" },
+  { label: "Расписание", href: "/life/schedule/" },
 ];
 
 const resources: QuickLink[] = [
   { label: "Новости", href: "/life/news/" },
   { label: "Фотогалерея", href: "/life/gallery/" },
-  { label: "Видеогалерея", href: "/life/videogallery/" },
-  { label: "Мероприятия", href: "/life/events/" },
+  { label: "Отзывы", href: "/life/reviews/" },
+  { label: "Документы", href: "/about/documents/" },
   { label: "Moodle", href: "http://89.23.6.107/", target: "blank" },
   { label: "Сферум", href: "https://sferum.ru/", target: "blank" },
 ];

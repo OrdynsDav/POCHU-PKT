@@ -6,11 +6,47 @@ import type { PhotoDetailSlide } from "@/components/ui/PhotoDetailSlider/PhotoDe
 import { PhotoDetailSlider } from "@/components/ui/PhotoDetailSlider/PhotoDetailSlider";
 import pageStyles from "./page.module.css";
 
+export type ScheduleGallerySlide = PhotoDetailSlide & {
+  tag: string;
+  title: string;
+  description: string;
+};
+
 type ScheduleAppGalleryProps = {
-  slides: readonly PhotoDetailSlide[];
-  /** Подпись для лайтбокса (доступность). */
+  slides: readonly ScheduleGallerySlide[];
   galleryTitle: string;
 };
+
+function GalleryCardImage({ src }: { src: string }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className={pageStyles.cardMedia}>
+      <span
+        className={[
+          pageStyles.mediaPlaceholder,
+          loaded ? pageStyles.mediaPlaceholderHidden : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+        aria-hidden="true"
+      />
+      <Image
+        src={src}
+        alt=""
+        fill
+        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 220px"
+        className={[
+          pageStyles.cardImage,
+          loaded ? pageStyles.cardImageLoaded : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+        onLoad={() => setLoaded(true)}
+      />
+    </div>
+  );
+}
 
 export function ScheduleAppGallery({ slides, galleryTitle }: ScheduleAppGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -21,11 +57,16 @@ export function ScheduleAppGallery({ slides, galleryTitle }: ScheduleAppGalleryP
     return null;
   }
 
+  const lightboxSlides: PhotoDetailSlide[] = slides.map(({ src, alt }) => ({ src, alt }));
+
   return (
     <>
       <div className={pageStyles.gallery} role="list">
-        {slides.map((img, i) => (
-          <figure key={img.src} className={pageStyles.card} role="listitem">
+        {slides.map((slide, i) => (
+          <article key={slide.src} className={pageStyles.card} role="listitem">
+            <span className={pageStyles.cardIndex} aria-hidden="true">
+              {String(i + 1).padStart(2, "0")}
+            </span>
             <button
               type="button"
               className={pageStyles.cardOpen}
@@ -33,25 +74,26 @@ export function ScheduleAppGallery({ slides, galleryTitle }: ScheduleAppGalleryP
                 setStartIndex(i);
                 setLightboxOpen(true);
               }}
-              aria-label={`Открыть скриншот ${i + 1} из ${slides.length}: ${img.alt}`}
+              aria-label={`Открыть: ${slide.title}. ${slide.description}`}
             >
-              <div className={pageStyles.cardMedia}>
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="(max-width: 768px) 70vw, (max-width: 1200px) 33vw, 280px"
-                  className={pageStyles.cardImage}
-                />
+              <div className={pageStyles.cardPreview}>
+                <GalleryCardImage src={slide.src} />
+                <span className={pageStyles.cardExpand} aria-hidden="true">
+                  Смотреть
+                </span>
               </div>
             </button>
-            <figcaption className={pageStyles.caption}>{img.alt}</figcaption>
-          </figure>
+            <div className={pageStyles.cardBody}>
+              <span className={pageStyles.cardTag}>{slide.tag}</span>
+              <h4 className={pageStyles.cardTitle}>{slide.title}</h4>
+              <p className={pageStyles.cardDesc}>{slide.description}</p>
+            </div>
+          </article>
         ))}
       </div>
 
       <PhotoDetailSlider
-        slides={slides}
+        slides={lightboxSlides}
         title={galleryTitle}
         open={lightboxOpen}
         startIndex={startIndex}

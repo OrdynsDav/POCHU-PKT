@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import styles from "./NewsCard.module.css";
 import { NewsCardProps } from "../types";
+import { NewsCardMedia } from "./NewsCardMedia";
 
 function isExternalHref(href: string) {
   return /^https?:\/\//i.test(href);
@@ -17,17 +17,7 @@ export function NewsCard({ link, image, title, date, excerpt }: NewsCardProps) {
         : {})}
       className={styles.newsCard}
     >
-      <div className={styles.newsCardMedia}>
-        <Image
-          src={image}
-          alt={title}
-          fill
-          sizes="(max-width: 48em) 100vw, (max-width: 87.5em) 48vw, 40rem"
-          quality={95}
-          className={styles.newsCardImg}
-        />
-        <div className={styles.newsCardOverlay} aria-hidden />
-      </div>
+      <NewsCardMedia src={image} alt={title} />
       <div className={styles.newsCardBody}>
         <time className={styles.newsCardDate}>{date}</time>
         <h3 className={styles.newsCardTitle}>{title}</h3>

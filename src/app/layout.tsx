@@ -76,6 +76,13 @@ export default function RootLayout({
         <meta name="yandex" content="index, follow" />
         <link rel="canonical" href="https://pkt-pskov.ru" />
 
+        <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon/icon0.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon/icon1.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon/apple-icon.png" />
+        <link rel="manifest" href="/favicon/manifest.json" />
+        <meta name="theme-color" content="#ffffff" />
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://pkt-pskov.ru" />

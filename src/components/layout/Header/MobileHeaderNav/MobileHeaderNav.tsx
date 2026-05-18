@@ -48,7 +48,7 @@ export function MobileHeaderNav({ open, onOpenChange }: MobileHeaderNavProps) {
         className={`${styles.drawer} ${open ? styles.drawerOpen : styles.drawerClosed}`}
       >
         <div className={styles.drawerHeader}>
-          <Logo href="/" />
+          <Logo href="/" priority />
           <button
             type="button"
             aria-label="Закрыть меню"

@@ -44,10 +44,7 @@
     align-self: start;
     aspect-ratio: var(--media-aspect-w) / var(--media-aspect-h);
     min-height: calc(var(--media-size) * var(--media-aspect-h) / var(--media-aspect-w));
-    background: linear-gradient(135deg,
-            #dbeafe 0%,
-            #eef3ff 45%,
-            #f8fbff 100%);
+    background: #1a0a0c;
     overflow: hidden;
     border-radius: 1rem;
 }
@@ -76,15 +73,62 @@
     }
 }
 
+.mediaPlaceholder {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(160deg,
+            rgb(61 21 24 / 90%) 0%,
+            rgb(123 45 38 / 75%) 50%,
+            rgb(61 21 24 / 88%) 100%);
+    overflow: hidden;
+    transition: opacity 0.4s ease;
+}
+
+.mediaPlaceholder::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg,
+            transparent,
+            rgb(255 255 255 / 14%),
+            transparent);
+    animation: newsCardShimmer 1.15s infinite;
+}
+
+.mediaPlaceholderHidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes newsCardShimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
 .newsCardImg {
+    z-index: 1;
     object-fit: cover;
     object-position: center;
     user-select: none;
+    opacity: 0;
+    filter: blur(0.5rem);
+    transition:
+        opacity 0.45s ease,
+        filter 0.45s ease;
+}
+
+.newsCardImgLoaded {
+    opacity: 1;
+    filter: none;
 }
 
 .newsCardOverlay {
     position: absolute;
     inset: 0;
+    z-index: 2;
     background: linear-gradient(to top,
             rgb(var(--color-burgundy-900-rgb, 61 21 24) / 30%),
             transparent);

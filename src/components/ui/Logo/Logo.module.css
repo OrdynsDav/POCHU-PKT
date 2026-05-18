@@ -4,3 +4,65 @@
     min-width: calc(20 * var(--spacing, 0.25rem));
     min-height: calc(20 * var(--spacing, 0.25rem));
 }
+
+.figure {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: calc(20 * var(--spacing, 0.25rem));
+}
+
+.placeholder {
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    background: linear-gradient(90deg,
+            rgb(61 21 24 / 6%),
+            rgb(61 21 24 / 12%),
+            rgb(61 21 24 / 6%));
+    border: 0.0625rem solid rgb(61 21 24 / 10%);
+    overflow: hidden;
+    transition: opacity 0.35s ease;
+}
+
+.placeholder::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg,
+            transparent,
+            rgb(255 255 255 / 35%),
+            transparent);
+    animation: logoShimmer 1.1s infinite;
+}
+
+.placeholderHidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    filter: blur(0.625rem);
+    transform: scale(1.04);
+    transition:
+        opacity 0.45s ease,
+        filter 0.45s ease,
+        transform 0.45s ease;
+}
+
+.imageVisible {
+    opacity: 1;
+    filter: none;
+    transform: none;
+}
+
+@keyframes logoShimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
