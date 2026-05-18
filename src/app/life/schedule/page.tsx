@@ -96,46 +96,53 @@ const appScreens: readonly ScheduleGallerySlide[] = [
 
 export default function LifeSchedulePage() {
   return (
-    <section className="page">
-      <Container>
-        <PageTitle title="Расписание занятий" />
-        <div className={styles.presentation}>
-          <div className={styles.hero}>
-            <div className={styles.heroText}>
-              <p className={styles.kicker}>Новое мобильное приложение</p>
-              <h2 className={styles.title}>Расписание и&nbsp;оценки всегда под рукой</h2>
-              <p className={styles.lead}>
-                Смотрите пары на&nbsp;сегодня и&nbsp;завтра, быстро находите нужную группу и
-                не&nbsp;пропускайте изменения благодаря уведомлениям.
-              </p>
-              <ul className={styles.features} aria-label="Преимущества приложения">
-                {heroFeatures.map(({ icon: Icon, title, description }) => (
-                  <li key={title} className={styles.feature}>
-                    <span className={styles.featureIcon} aria-hidden="true">
-                      <Icon className={styles.featureIconSvg} strokeWidth={2} />
-                    </span>
-                    <div className={styles.featureContent}>
-                      <span className={styles.featureTitle}>{title}</span>
-                      <span className={styles.featureDesc}>{description}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+    <div className="page">
+      <PageTitle title="Расписание занятий" />
+      <div className={styles.presentation}>
+        <section className={styles.hero}>
+          <Container>
+            
+            <div className={styles.heroWrapper}>
+              <div className={styles.heroText}>
+                <p className={styles.kicker}>Новое мобильное приложение</p>
+                <h2 className={styles.title}>Расписание и&nbsp;оценки всегда под рукой</h2>
+                <p className={styles.lead}>
+                  Смотрите пары на&nbsp;сегодня и&nbsp;завтра, быстро находите нужную группу и
+                  не&nbsp;пропускайте изменения благодаря уведомлениям.
+                </p>
+                <ul className={styles.features} aria-label="Преимущества приложения">
+                  {heroFeatures.map(({ icon: Icon, title, description }) => (
+                    <li key={title} className={styles.feature}>
+                      <span className={styles.featureIcon} aria-hidden="true">
+                        <Icon className={styles.featureIconSvg} strokeWidth={2} />
+                      </span>
+                      <div className={styles.featureContent}>
+                        <span className={styles.featureTitle}>{title}</span>
+                        <span className={styles.featureDesc}>{description}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <ScheduleBackground />
             </div>
-            <ScheduleBackground />
-          </div>
-          <div className={styles.galleryBlock}>
-            <h3 className={styles.galleryTitle}>Как выглядит приложение</h3>
-            <p className={styles.galleryLead}>
-              Девять ключевых экранов&nbsp;&mdash; от&nbsp;входа до&nbsp;расписания и&nbsp;оценок.
-            </p>
-            <ScheduleAppGallery
-              slides={appScreens}
-              galleryTitle="Скриншоты мобильного приложения"
-            />
-          </div>
-        </div>
-      </Container>
-    </section>
+          </Container>
+        </section>
+        <section className="gallery">
+          <Container>
+            <div className={styles.galleryBlock}>
+              <h3 className={styles.galleryTitle}>Как выглядит приложение</h3>
+              <p className={styles.galleryLead}>
+                Девять ключевых экранов&nbsp;&mdash; от&nbsp;входа до&nbsp;расписания и&nbsp;оценок.
+              </p>
+              <ScheduleAppGallery
+                slides={appScreens}
+                galleryTitle="Скриншоты мобильного приложения"
+              />
+            </div>
+          </Container>
+        </section>
+      </div>
+    </div>
   );
 }

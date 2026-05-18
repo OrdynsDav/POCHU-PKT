@@ -10,7 +10,6 @@
   place-items: center;
   min-height: min(36rem, 88vh);
   padding: clamp(2rem, 1.2rem + 3vw, 3.5rem) clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
-  border-radius: 1.5rem;
   overflow: hidden;
   isolation: isolate;
   box-shadow: 0 1.25rem 3rem rgb(61 21 24 / 20%);
@@ -22,7 +21,6 @@
   inset: auto -15% -40% auto;
   width: min(24rem, 65%);
   aspect-ratio: 1;
-  border-radius: 50%;
   background: radial-gradient(circle, rgb(220 38 38 / 22%) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
@@ -420,7 +418,6 @@
   .hero {
     min-height: auto;
     padding: 1.75rem 1.15rem 2rem;
-    border-radius: 1.125rem;
   }
 
   .gallery {
