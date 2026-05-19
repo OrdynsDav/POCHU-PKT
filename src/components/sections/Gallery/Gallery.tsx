@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import styles from "./Gallery.module.css";
-import { useEffect, useMemo, useState, ViewTransition } from "react";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
-import { X } from "lucide-react";
+import { useCallback, useState } from "react";
+import { PhotoDetailSlider } from "@/components/ui/PhotoDetailSlider/PhotoDetailSlider";
+
+const GALLERY_TITLE = "Мобильное приложение (светлая тема)";
 
 const imagesLight = [
     {
@@ -56,114 +56,52 @@ const imagesLight = [
         src: "/images/gradebook/gradebook-about-light.jpg",
         alt: "Фотография о системе ЭЖ (светлая тема)",
     },
-]
+];
 
 export function Gallery() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [activeIndex, setActiveIndex] = useState(0);
-
-    useEffect(() => {
-        if (!isOpen) return;
-    
-        const prevOverflow = document.documentElement.style.overflow;
-        document.documentElement.style.overflow = "hidden";
-    
-        const onKeyDown = (e: KeyboardEvent) => {
-          if (e.key === "Escape") setIsOpen(false);
-        };
-    
-        window.addEventListener("keydown", onKeyDown);
-        return () => {
-          window.removeEventListener("keydown", onKeyDown);
-          document.documentElement.style.overflow = prevOverflow;
-        };
-      }, [isOpen]);
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [startIndex, setStartIndex] = useState(0);
+    const closeLightbox = useCallback(() => setLightboxOpen(false), []);
 
     return (
-        <div
-            id="gallery"
-            aria-labelledby="gallery-heading"
-            className={styles.gallery}
-            style={{ "--isOpen": isOpen ? "hidden" : "unset" } as React.CSSProperties}
-        >
-            <div className={styles.galleryInner}>
-                <div className={styles.galleryContent}>
-                    <h2 className={styles.galleryTitle}>Мобильное приложение (светлая тема)</h2>
-                    <ul className={styles.galleryList}>
-                        {imagesLight.map((image, i) => (
-                            <li className={styles.galleryItem} key={image.alt}>
-                                <button
-                                    type="button"
-                                    className={styles.galleryButton}
-                                    onClick={() => {
-                                        setActiveIndex(i);
-                                        setIsOpen(true);
-                                    }}
-                                    aria-label={`Открыть фото ${i + 1} из ${imagesLight.length}`}
-                                >
-                                    <Image className={styles.galleryImage} src={image.src} alt={image.alt} width={780} height={600} />
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
+        <>
+            <div
+                id="gallery"
+                aria-labelledby="gallery-heading"
+                className={styles.gallery}
+                style={{ "--isOpen": lightboxOpen ? "hidden" : "unset" } as React.CSSProperties}
+            >
+                <div className={styles.galleryInner}>
+                    <div className={styles.galleryContent}>
+                        <h2 className={styles.galleryTitle}>{GALLERY_TITLE}</h2>
+                        <ul className={styles.galleryList}>
+                            {imagesLight.map((image, i) => (
+                                <li className={styles.galleryItem} key={image.alt}>
+                                    <button
+                                        type="button"
+                                        className={styles.galleryButton}
+                                        onClick={() => {
+                                            setStartIndex(i);
+                                            setLightboxOpen(true);
+                                        }}
+                                        aria-label={`Открыть фото ${i + 1} из ${imagesLight.length}`}
+                                    >
+                                        <Image className={styles.galleryImage} src={image.src} alt={image.alt} width={780} height={600} />
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            {isOpen ? (
-                <div
-                    className={styles.lightboxOverlay}
-                    role="dialog"
-                    aria-modal="true"
-                    aria-label="Просмотр фотографий галереи"
-                    onMouseDown={(e) => {
-                        if (e.target === e.currentTarget) setIsOpen(false);
-                    }}
-                >
-                    <div className={styles.lightbox}>
-                        <button
-                            type="button"
-                            className={styles.lightboxClose}
-                            onClick={() => setIsOpen(false)}
-                            aria-label="Закрыть просмотр"
-                        >
-                            <X className={styles.lightboxCloseIcon} width={24} height={24} />
-                        </button>
-
-                        <Splide
-                            className={styles.lightboxSplide}
-                            options={{
-                                type: "loop",
-                                perPage: 1,
-                                perMove: 1,
-                                gap: 0,
-                                rewind: true,
-                                pagination: imagesLight.length > 1,
-                                arrows: false,
-                                speed: 450,
-                                easing: "cubic-bezier(0.33, 1, 0.68, 1)",
-                                start: activeIndex,
-                            }}
-                            onMoved={(_splide, newIndex: number) => setActiveIndex(newIndex)}
-                            aria-label="Просмотр фото галереи"
-                        >
-                            {imagesLight.map((img, i) => (
-                                <SplideSlide key={`lightbox-${img.src}`}>
-                                    <div className={styles.lightboxSlide}>
-                                        <Image
-                                            src={img.src}
-                                            alt={img.alt}
-                                            fill
-                                            sizes="100vw"
-                                            className={styles.lightboxImage}
-                                            quality={100}
-                                        />
-                                    </div>
-                                </SplideSlide>
-                            ))}
-                        </Splide>
-                    </div>
-                </div>
-            ) : null}
-        </div>
+            <PhotoDetailSlider
+                slides={imagesLight}
+                title={GALLERY_TITLE}
+                open={lightboxOpen}
+                startIndex={startIndex}
+                onCloseAction={closeLightbox}
+            />
+        </>
     );
 }

@@ -61,7 +61,7 @@
 
 .lightboxCloseIcon {
   display: block;
-  color: inherit;
+  color: var(--color-white);
   width: clamp(1.5rem, 0.5rem + 1.875vw, 2.5rem);
   height: clamp(1.5rem, 0.5rem + 1.875vw, 2.5rem);
   fill: currentColor;

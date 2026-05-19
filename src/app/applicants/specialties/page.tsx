@@ -1,16 +1,16 @@
 import { PdfAttachmentsSection } from "@/components/ui/pdfDownloadLink/PdfDownloadLink";
-import { Container, Section } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { PageTitle } from "@/components/ui/PageTitle/PageTitle";
 import { SpecialtiesList } from "@/components/lists/SpecialtiesList/SpecialtiesList";
 
 export default function ApplicantsSpecialtiesPage() {
   return (
-    <Section className="page" id="specialties">
+    <section className="page" id="specialties">
       <Container>
         <PageTitle title="Специальности" />
         <PdfAttachmentsSection pdfAppRoute="/applicants/specialties" />
         <SpecialtiesList />
       </Container>
-    </Section>
+    </section>
   );
 }

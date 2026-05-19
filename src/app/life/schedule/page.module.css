@@ -216,11 +216,6 @@
 .galleryBlock {
   display: grid;
   gap: 0.6rem;
-  padding: clamp(1.25rem, 0.9rem + 1.2vw, 1.75rem);
-  border-radius: 1.25rem;
-  background: linear-gradient(165deg, var(--color-cream, #fff8f0) 0%, #fff 100%);
-  border: 0.0625rem solid var(--color-border-warm, #e8d5c4);
-  box-shadow: 0 0.65rem 1.75rem var(--color-red-shadow-05);
 }
 
 .galleryTitle {
