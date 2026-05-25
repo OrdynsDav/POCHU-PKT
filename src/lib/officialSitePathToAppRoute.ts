@@ -3,15 +3,19 @@
  * Используется вместе с полем sourcePage в pdf-manifest.json.
  */
 
+function normalizePath(path: string): string {
+  const withoutTrailingSlash = path.replace(/\/$/, "") || "/";
+  if (withoutTrailingSlash === "/") return "/";
+  return withoutTrailingSlash.replace(/\.php$/i, "") || "/";
+}
+
 function normalizeSourcePath(sourcePage: string): string {
   const raw = sourcePage.split("?")[0];
-  if (raw === "/") return "/";
-  return raw.replace(/\/$/, "") || "/";
+  return normalizePath(raw);
 }
 
 export function normalizeAppRoute(route: string): string {
-  if (route === "/") return "/";
-  return route.replace(/\/$/, "") || "/";
+  return normalizePath(route.split("?")[0]);
 }
 
 type Rule = { test: (p: string) => boolean; route: string };
