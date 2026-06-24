@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Home } from "lucide-react";
 import { Container } from "@/components/ui";
 import {
   getNewsArticleBySlug,
@@ -9,8 +9,8 @@ import {
 } from "@/data/news/articles";
 import { formatNewsDateLong, formatNewsTime } from "@/lib/formatNewsDate";
 import { NewsArticleView } from "@/components/news/NewsArticleView/NewsArticleView";
-import styles from "./page.module.css";
 import { Breadcrumbs } from "@/components/Breadcrumbs/Breadcrumbs";
+import styles from "./page.module.css";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -52,7 +52,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
   const timeLabel = formatNewsTime(article.publishedAt);
 
   const breadcrumbs = [
-    { label: "Главная", href: "/" },
+    { label: "Главная", href: "/", icon: <Home /> },
     { label: "Новости", href: "/life/news" },
     { label: article.title, isCurrent: true },
   ];

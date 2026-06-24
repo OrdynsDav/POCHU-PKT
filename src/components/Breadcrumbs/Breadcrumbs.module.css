@@ -6,12 +6,18 @@
     margin-bottom: 2rem;
 }
 
+.item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
 .link {
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-brown-600);
     text-decoration: none;
-    padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+    
 }
 
 .link:hover,
@@ -24,6 +30,6 @@
     text-underline-offset: 0.8rem;
 }
 
-.current {
+/* .current {
     padding: 0.5rem 0.75rem 0.5rem 0.5rem;
-}
+} */

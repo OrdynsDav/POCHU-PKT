@@ -1,10 +1,12 @@
 import Link from "next/link";
 import styles from "./Breadcrumbs.module.css";
+import React from "react";
 type BreadcrumbsProps = {
     items: {
         label: string;
         href?: string;
         isCurrent?: boolean;
+        icon?: React.ReactNode;
     }[];
 };
 
@@ -19,7 +21,9 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                     >
                         {!item.isCurrent ? (
                             <>
-                                <Link className={styles.link} href={item.href ?? "#"}>{item.label}</Link>
+                                <Link className={styles.link} href={item.href ?? "#"}>
+                                    {item.icon !== undefined ? item.icon : item.label}
+                                </Link>
                                 <span className={styles.separator} aria-hidden>/</span>
                             </>
                         ) : (

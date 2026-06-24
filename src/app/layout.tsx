@@ -145,12 +145,6 @@ export default function RootLayout({
       </head>
       <body className={fontUnbounded.className}>
         <SpeedInsights />
-        <a
-          href="#main-content"
-          className="skip-link"
-        >
-          Перейти к основному содержимому
-        </a>
         <Header />
         <main id="main-content" role="main" className="page-main">
           {children}

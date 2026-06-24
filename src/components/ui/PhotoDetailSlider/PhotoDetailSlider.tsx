@@ -85,7 +85,7 @@ export function PhotoDetailSlider({
             type: "loop",
             perPage: 1,
             perMove: 1,
-            gap: 0,
+            gap: 8,
             rewind: true,
             pagination: slides.length > 1,
             arrows: false,

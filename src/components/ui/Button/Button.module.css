@@ -60,7 +60,6 @@
     transform: scale(0.98);
 }
 
-/* Светлый фон, тёмный текст — блоки на градиенте / тёмном фоне */
 .light {
     background-color: #fff8f0;
     color: #3d1518;

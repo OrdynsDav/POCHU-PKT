@@ -65,6 +65,7 @@
   min-height: 100dvh;
   background: rgb(61 21 24 / 0.22);
   pointer-events: auto;
+  touch-action: none;
 }
 
 .backdropVisible {
@@ -159,6 +160,7 @@
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   padding: 2rem 1rem;
 }
 
