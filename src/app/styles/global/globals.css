@@ -138,30 +138,3 @@ h4,
 p {
   margin: 0;
 }
-
-@media (max-width: 53.125em) {
-  #news ul {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* Applicants benefits grid */
-@media (max-width: 32.5em) {
-  #applicants .grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  #applicants .grid>li {
-    grid-column: span 2 !important;
-  }
-}
-
-@media (min-width: 32.5625em) and (max-width: 46.25em) {
-  #applicants .grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  #applicants .grid>li:last-child {
-    grid-column: span 2 !important;
-  }
-}
