@@ -6,12 +6,12 @@
 function normalizeSourcePath(sourcePage: string): string {
   const raw = sourcePage.split("?")[0];
   if (raw === "/") return "/";
-  return raw.replace(/\/$/, "") || "/";
+  return raw.replace(/\/$/, "").replace(/\.php$/, "") || "/";
 }
 
 export function normalizeAppRoute(route: string): string {
   if (route === "/") return "/";
-  return route.replace(/\/$/, "") || "/";
+  return route.replace(/\/$/, "").replace(/\.php$/, "") || "/";
 }
 
 type Rule = { test: (p: string) => boolean; route: string };
